@@ -115,9 +115,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 
 /* post cards */
 .pc{display:flex;flex-direction:column;background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:inherit}
-.pc:hover,.pc:focus-visible{transform:translateY(-2px);outline:none}
-.pc:focus-visible{box-shadow:0 0 0 3px var(--gold)}
-@media(prefers-reduced-motion:no-preference){.pc{transition:transform .18s ease}}
+.pc:focus-visible{outline:none;box-shadow:0 0 0 3px var(--gold)}
 .pc .ph{position:relative;aspect-ratio:4/5;background:var(--hair)}
 .pc .ph img{width:100%;height:100%;object-fit:cover;display:block}
 .pc .tags{position:absolute;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap}
@@ -144,6 +142,46 @@ ul.pts li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7
 .pend{color:var(--faint);font-style:italic;font-weight:500}
 footer{margin-top:44px;text-align:center;font-size:12.5px;color:var(--faint)}
 footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--goldink);margin-top:5px}
+
+/* elevación de tarjetas */
+.c,.pc{transition:none}
+@media (prefers-reduced-motion: no-preference){
+  .c,.pc{transition:transform .22s cubic-bezier(.2,.7,.3,1), box-shadow .22s cubic-bezier(.2,.7,.3,1)}
+}
+.c:hover,.pc:hover,.pc:focus-visible{
+  transform:translateY(-4px);
+  box-shadow:0 2px 4px rgba(28,58,46,.06), 0 18px 40px -16px rgba(28,58,46,.28);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .c:hover,
+  :root:not([data-theme="light"]) .pc:hover{box-shadow:0 2px 6px rgba(0,0,0,.4), 0 20px 44px -18px rgba(0,0,0,.75)}}
+:root[data-theme="dark"] .c:hover,:root[data-theme="dark"] .pc:hover{
+  box-shadow:0 2px 6px rgba(0,0,0,.4), 0 20px 44px -18px rgba(0,0,0,.75)}
+
+/* puntos sensibles de los gráficos */
+[data-v]{cursor:default}
+.br[data-v],.hit{transition:none}
+@media (prefers-reduced-motion: no-preference){ .br[data-v]{transition:opacity .15s} }
+.br[data-v]:hover,.br[data-v].on{opacity:.75}
+.hit{fill:transparent}
+.hit:hover,.hit.on{fill:var(--gold);fill-opacity:.10}
+.mk{opacity:0;pointer-events:none}
+.mk.on{opacity:1}
+
+/* tooltip */
+.tip{
+  position:fixed;z-index:60;pointer-events:none;opacity:0;
+  transform:translate(-50%,-115%) scale(.96);transform-origin:50% 100%;
+  background:var(--deep);color:#FFFFE3;border:1px solid rgba(244,184,49,.35);
+  border-radius:10px;padding:8px 12px;font-size:12.5px;line-height:1.45;
+  font-family:"Work Sans",sans-serif;white-space:nowrap;
+  box-shadow:0 10px 30px -10px rgba(0,0,0,.5);
+}
+@media (prefers-reduced-motion: no-preference){
+  .tip{transition:opacity .13s ease, transform .13s cubic-bezier(.2,.7,.3,1)}
+}
+.tip.on{opacity:1;transform:translate(-50%,-125%) scale(1)}
+.tip b{display:block;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums;color:#fff}
+.tip i{font-style:normal;color:var(--gold);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
 </style>
 <style>
 /* logos */
@@ -265,7 +303,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
         <text class="ax mid" x="34" y="212">1 ago</text><text class="ax mid" x="230.5" y="212">8</text>
         <text class="ax mid" x="427" y="212">15</text><text class="ax mid" x="623.5" y="212">22</text>
         <text class="ax mid" x="791.9" y="212">29</text>
-      </svg>
+      <g class="hitlayer"><rect class="hit" x="20.0" y="14" width="28.1" height="180" data-t="1 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="48.0" y="14" width="28.1" height="180" data-t="2 de agosto" data-v="13" data-u="cuentas alcanzadas"></rect><rect class="hit" x="76.1" y="14" width="28.1" height="180" data-t="3 de agosto" data-v="120" data-u="cuentas alcanzadas"></rect><rect class="hit" x="104.2" y="14" width="28.1" height="180" data-t="4 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="132.2" y="14" width="28.1" height="180" data-t="5 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="160.3" y="14" width="28.1" height="180" data-t="6 de agosto" data-v="5" data-u="cuentas alcanzadas"></rect><rect class="hit" x="188.4" y="14" width="28.1" height="180" data-t="7 de agosto" data-v="4" data-u="cuentas alcanzadas"></rect><rect class="hit" x="216.5" y="14" width="28.1" height="180" data-t="8 de agosto" data-v="6" data-u="cuentas alcanzadas"></rect><rect class="hit" x="244.5" y="14" width="28.1" height="180" data-t="9 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="272.6" y="14" width="28.1" height="180" data-t="10 de agosto" data-v="0" data-u="cuentas alcanzadas"></rect><rect class="hit" x="300.7" y="14" width="28.1" height="180" data-t="11 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="328.7" y="14" width="28.1" height="180" data-t="12 de agosto" data-v="134" data-u="cuentas alcanzadas"></rect><rect class="hit" x="356.8" y="14" width="28.1" height="180" data-t="13 de agosto" data-v="4" data-u="cuentas alcanzadas"></rect><rect class="hit" x="384.9" y="14" width="28.1" height="180" data-t="14 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="412.9" y="14" width="28.1" height="180" data-t="15 de agosto" data-v="10" data-u="cuentas alcanzadas"></rect><rect class="hit" x="441.0" y="14" width="28.1" height="180" data-t="16 de agosto" data-v="6" data-u="cuentas alcanzadas"></rect><rect class="hit" x="469.1" y="14" width="28.1" height="180" data-t="17 de agosto" data-v="99" data-u="cuentas alcanzadas"></rect><rect class="hit" x="497.2" y="14" width="28.1" height="180" data-t="18 de agosto" data-v="9" data-u="cuentas alcanzadas"></rect><rect class="hit" x="525.2" y="14" width="28.1" height="180" data-t="19 de agosto" data-v="113" data-u="cuentas alcanzadas"></rect><rect class="hit" x="553.3" y="14" width="28.1" height="180" data-t="20 de agosto" data-v="11" data-u="cuentas alcanzadas"></rect><rect class="hit" x="581.4" y="14" width="28.1" height="180" data-t="21 de agosto" data-v="12" data-u="cuentas alcanzadas"></rect><rect class="hit" x="609.4" y="14" width="28.1" height="180" data-t="22 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="637.5" y="14" width="28.1" height="180" data-t="23 de agosto" data-v="2" data-u="cuentas alcanzadas"></rect><rect class="hit" x="665.6" y="14" width="28.1" height="180" data-t="24 de agosto" data-v="5" data-u="cuentas alcanzadas"></rect><rect class="hit" x="693.6" y="14" width="28.1" height="180" data-t="25 de agosto" data-v="1" data-u="cuentas alcanzadas"></rect><rect class="hit" x="721.7" y="14" width="28.1" height="180" data-t="26 de agosto" data-v="7" data-u="cuentas alcanzadas"></rect><rect class="hit" x="749.8" y="14" width="28.1" height="180" data-t="27 de agosto" data-v="141" data-u="cuentas alcanzadas"></rect><rect class="hit" x="777.9" y="14" width="28.1" height="180" data-t="28 de agosto" data-v="0" data-u="cuentas alcanzadas"></rect></g></svg>
       <p class="cap">El alcance se mueve por picos, no por goteo. Cinco días concentran la mayor parte del mes.</p>
     </div>
 
@@ -290,23 +328,23 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
         <line class="gl" x1="34" y1="172" x2="792" y2="172"></line>
         <text class="ax end" x="27" y="16">150</text><text class="ax end" x="27" y="69">100</text>
         <text class="ax end" x="27" y="122">50</text><text class="ax end" x="27" y="176">0</text>
-        <rect class="br m" x="42.3" y="162.4" width="28" height="9.6" rx="3"></rect>
-        <rect class="br m" x="86.9" y="160.3" width="28" height="11.7" rx="3"></rect>
-        <rect class="br" x="131.5" y="36.5" width="28" height="135.5" rx="3"></rect>
-        <rect class="br m" x="176.1" y="157.1" width="28" height="14.9" rx="3"></rect>
-        <rect class="br m" x="220.7" y="161.3" width="28" height="10.7" rx="3"></rect>
-        <rect class="br m" x="265.3" y="160.3" width="28" height="11.7" rx="3"></rect>
-        <rect class="br m" x="309.9" y="160.3" width="28" height="11.7" rx="3"></rect>
-        <rect class="br" x="354.5" y="21.6" width="28" height="150.4" rx="3"></rect>
-        <rect class="br m" x="399.1" y="161.3" width="28" height="10.7" rx="3"></rect>
-        <rect class="br m" x="443.7" y="162.4" width="28" height="9.6" rx="3"></rect>
-        <rect class="br" x="488.3" y="55.7" width="28" height="116.3" rx="3"></rect>
-        <rect class="br" x="532.9" y="33.3" width="28" height="138.7" rx="3"></rect>
-        <rect class="br m" x="577.5" y="163.5" width="28" height="8.5" rx="3"></rect>
-        <rect class="br m" x="622.1" y="163.5" width="28" height="8.5" rx="3"></rect>
-        <rect class="br m" x="666.7" y="164.5" width="28" height="7.5" rx="3"></rect>
-        <rect class="br m" x="711.3" y="166.7" width="28" height="5.3" rx="3"></rect>
-        <rect class="br" x="755.9" y="22.7" width="28" height="149.3" rx="3"></rect>
+        <rect class="br m" x="42.3" y="162.4" width="28" height="9.6" rx="3" data-t="Post · 1 de agosto" data-v="9" data-u="de alcance"></rect>
+        <rect class="br m" x="86.9" y="160.3" width="28" height="11.7" rx="3" data-t="Post · 3 de agosto" data-v="11" data-u="de alcance"></rect>
+        <rect class="br" x="131.5" y="36.5" width="28" height="135.5" rx="3" data-t="Reel · 4 de agosto" data-v="127" data-u="de alcance"></rect>
+        <rect class="br m" x="176.1" y="157.1" width="28" height="14.9" rx="3" data-t="Post · 6 de agosto" data-v="14" data-u="de alcance"></rect>
+        <rect class="br m" x="220.7" y="161.3" width="28" height="10.7" rx="3" data-t="Post · 8 de agosto" data-v="10" data-u="de alcance"></rect>
+        <rect class="br m" x="265.3" y="160.3" width="28" height="11.7" rx="3" data-t="Post · 9 de agosto" data-v="11" data-u="de alcance"></rect>
+        <rect class="br m" x="309.9" y="160.3" width="28" height="11.7" rx="3" data-t="Post · 12 de agosto" data-v="11" data-u="de alcance"></rect>
+        <rect class="br" x="354.5" y="21.6" width="28" height="150.4" rx="3" data-t="Reel · 13 de agosto" data-v="141" data-u="de alcance"></rect>
+        <rect class="br m" x="399.1" y="161.3" width="28" height="10.7" rx="3" data-t="Post · 14 de agosto" data-v="10" data-u="de alcance"></rect>
+        <rect class="br m" x="443.7" y="162.4" width="28" height="9.6" rx="3" data-t="Post · 14 de agosto" data-v="9" data-u="de alcance"></rect>
+        <rect class="br" x="488.3" y="55.7" width="28" height="116.3" rx="3" data-t="Reel · 18 de agosto" data-v="109" data-u="de alcance"></rect>
+        <rect class="br" x="532.9" y="33.3" width="28" height="138.7" rx="3" data-t="Reel · 19 de agosto" data-v="130" data-u="de alcance"></rect>
+        <rect class="br m" x="577.5" y="163.5" width="28" height="8.5" rx="3" data-t="Post · 21 de agosto" data-v="8" data-u="de alcance"></rect>
+        <rect class="br m" x="622.1" y="163.5" width="28" height="8.5" rx="3" data-t="Post · 22 de agosto" data-v="8" data-u="de alcance"></rect>
+        <rect class="br m" x="666.7" y="164.5" width="28" height="7.5" rx="3" data-t="Post · 25 de agosto" data-v="7" data-u="de alcance"></rect>
+        <rect class="br m" x="711.3" y="166.7" width="28" height="5.3" rx="3" data-t="Post · 26 de agosto" data-v="5" data-u="de alcance"></rect>
+        <rect class="br" x="755.9" y="22.7" width="28" height="149.3" rx="3" data-t="Reel · 28 de agosto" data-v="140" data-u="de alcance"></rect>
         <text class="bl" x="368.5" y="16">141</text>
         <text class="ax mid" x="56.3" y="190">1</text><text class="ax mid" x="145.5" y="190">4</text>
         <text class="ax mid" x="368.5" y="190">13</text><text class="ax mid" x="546.9" y="190">19</text>
@@ -328,11 +366,11 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
         <line class="gl" x1="30" y1="170" x2="392" y2="170"></line>
         <text class="ax end" x="24" y="34">30%</text><text class="ax end" x="24" y="104">15%</text>
         <text class="ax end" x="24" y="174">0</text>
-        <rect class="br" x="45" y="73.9" width="44" height="96.1" rx="4"></rect>
-        <rect class="br" x="117" y="59" width="44" height="111" rx="4"></rect>
-        <rect class="br m" x="189" y="118.7" width="44" height="51.3" rx="4"></rect>
-        <rect class="br" x="261" y="48.7" width="44" height="121.3" rx="4"></rect>
-        <rect class="br" x="333" y="56.6" width="44" height="113.4" rx="4"></rect>
+        <rect class="br" x="45" y="73.9" width="44" height="96.1" rx="4" data-t="Reel del 4 de agosto" data-v="20.6%" data-u="vista más de 3 s"></rect>
+        <rect class="br" x="117" y="59" width="44" height="111" rx="4" data-t="Reel del 13 de agosto" data-v="23.8%" data-u="vista más de 3 s"></rect>
+        <rect class="br m" x="189" y="118.7" width="44" height="51.3" rx="4" data-t="Reel del 18 de agosto" data-v="11.0%" data-u="vista más de 3 s"></rect>
+        <rect class="br" x="261" y="48.7" width="44" height="121.3" rx="4" data-t="Reel del 19 de agosto" data-v="26.0%" data-u="vista más de 3 s"></rect>
+        <rect class="br" x="333" y="56.6" width="44" height="113.4" rx="4" data-t="Reel del 28 de agosto" data-v="24.3%" data-u="vista más de 3 s"></rect>
         <line class="avg" x1="30" y1="71.4" x2="392" y2="71.4"></line>
         <text class="ax end" x="392" y="66">prom. 21.1%</text>
         <text class="bl" x="67" y="68">20.6</text><text class="bl" x="139" y="53">23.8</text>
@@ -522,5 +560,41 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
   </footer>
 </div>
 
+
+<script>
+(function(){
+  var tip = document.createElement('div');
+  tip.className = 'tip'; tip.setAttribute('role','status'); tip.setAttribute('aria-live','polite');
+  document.body.appendChild(tip);
+  var activo = null;
+
+  function mostrar(el){
+    if (activo === el) return;
+    ocultar();
+    activo = el; el.classList.add('on');
+    var v = el.getAttribute('data-v'), t = el.getAttribute('data-t'), u = el.getAttribute('data-u') || '';
+    tip.innerHTML = '<i>' + t + '</i><b>' + v + '</b>' + (u ? '<span>' + u + '</span>' : '');
+    var r = el.getBoundingClientRect();
+    tip.style.left = (r.left + r.width/2) + 'px';
+    tip.style.top  = (r.top + (el.classList.contains('hit') ? r.height/2 : 0)) + 'px';
+    tip.classList.add('on');
+  }
+  function ocultar(){
+    if (activo) activo.classList.remove('on');
+    activo = null; tip.classList.remove('on');
+  }
+
+  document.addEventListener('pointerover', function(e){
+    var el = e.target.closest ? e.target.closest('[data-v]') : null;
+    if (el) mostrar(el); else if (activo && !e.target.closest('.tip')) ocultar();
+  });
+  document.addEventListener('pointerdown', function(e){
+    var el = e.target.closest ? e.target.closest('[data-v]') : null;
+    if (el) mostrar(el); else ocultar();
+  });
+  window.addEventListener('scroll', ocultar, {passive:true});
+  window.addEventListener('blur', ocultar);
+})();
+</script>
 </body>
 </html>
