@@ -11,7 +11,7 @@
 :root{
   --bg:#EDEDE2; --card:#FFFFFF; --card2:#FFFEF2;
   --mint1:#DCEBDF; --mint2:#C4DECC;
-  --gold1:#FDF2D8; --gold2:#F8E2AE;
+  --gold1:#FCEBC0; --gold2:#F5D693;
   --deep:#1C3A2E; --deep2:#14291F;
   --ink:#171A18; --soft:#5C6B62; --faint:#8E9A93;
   --hair:#E2E2D2; --gold:#F4B831; --goldink:#8F6608;
@@ -20,7 +20,7 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0E1A14; --card:#18291F; --card2:#1B2E23;
   --mint1:#1F3A2C; --mint2:#274936;
-  --gold1:#39301A; --gold2:#4E4020;
+  --gold1:#4E3C12; --gold2:#63501B;
   --deep:#0A150F; --deep2:#060E0A;
   --ink:#F1F0DC; --soft:#A5BAAC; --faint:#748C7D;
   --hair:#24382C; --gold:#F4B831; --goldink:#F4B831;
@@ -29,7 +29,7 @@
 :root[data-theme="dark"]{
   --bg:#0E1A14; --card:#18291F; --card2:#1B2E23;
   --mint1:#1F3A2C; --mint2:#274936;
-  --gold1:#39301A; --gold2:#4E4020;
+  --gold1:#4E3C12; --gold2:#63501B;
   --deep:#0A150F; --deep2:#060E0A;
   --ink:#F1F0DC; --soft:#A5BAAC; --faint:#748C7D;
   --hair:#24382C; --gold:#F4B831; --goldink:#F4B831;
@@ -112,6 +112,20 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 /* donut */
 .ring{display:flex;align-items:center;gap:18px}
 .ring svg{width:104px;height:104px;flex:none}
+
+
+/* marfil: es un ground declarado, no un blanco roto */
+.c.marfil{background:linear-gradient(158deg,#FFFFE3,#FBFADF);border:1px solid #EFEDCB}
+/* chispa: el rojo entra como filo y acento, nunca como relleno */
+.c.chispa{position:relative;overflow:hidden}
+.c.chispa::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--fire)}
+.c.chispa .lab,.c.chispa h2{color:var(--fire)}
+.br.baja{fill:var(--fire)}
+.dato-baja{color:var(--fire);font-weight:600}
+
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .c.marfil{
+  background:linear-gradient(158deg,#2A2F23,#23281C);border-color:#3A4030}}
+:root[data-theme="dark"] .c.marfil{background:linear-gradient(158deg,#2A2F23,#23281C);border-color:#3A4030}
 
 /* post cards */
 .pc{display:flex;flex-direction:column;background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:inherit}
@@ -255,7 +269,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       <div style="margin-top:16px"><span class="pill">63% no nos seguía</span></div>
     </div>
 
-    <div class="c s4">
+    <div class="c marfil s4">
       <p class="lab">Seguidores ganados</p>
       <p class="big">+20</p>
       <div class="rows" style="margin-top:14px">
@@ -366,7 +380,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       <p class="cap">En el listado de Instagram, los cinco reels ocupan los cinco primeros lugares del mes. El primer post aparece hasta el sexto.</p>
     </div>
 
-    <div class="c s4">
+    <div class="c chispa s4">
       <h2>Retención de reels</h2>
       <p class="h2sub">Reproducciones que pasan de 3 segundos</p>
       <svg viewBox="0 0 400 210" role="img" aria-label="Retención de los cinco reels. El del 19 llega a 26 por ciento y el del 18 a 11, con promedio de 21.1.">
@@ -377,7 +391,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
         <text class="ax end" x="24" y="174">0</text>
         <rect class="br" x="45" y="73.9" width="44" height="96.1" rx="4" data-t="Reel del 4 de agosto" data-v="20.6%" data-u="vista más de 3 s"></rect>
         <rect class="br" x="117" y="59" width="44" height="111" rx="4" data-t="Reel del 13 de agosto" data-v="23.8%" data-u="vista más de 3 s"></rect>
-        <rect class="br m" x="189" y="118.7" width="44" height="51.3" rx="4" data-t="Reel del 18 de agosto" data-v="11.0%" data-u="vista más de 3 s"></rect>
+        <rect class="br baja" x="189" y="118.7" width="44" height="51.3" rx="4" data-t="Reel del 18 de agosto" data-v="11.0%" data-u="vista más de 3 s"></rect>
         <rect class="br" x="261" y="48.7" width="44" height="121.3" rx="4" data-t="Reel del 19 de agosto" data-v="26.0%" data-u="vista más de 3 s"></rect>
         <rect class="br" x="333" y="56.6" width="44" height="113.4" rx="4" data-t="Reel del 28 de agosto" data-v="24.3%" data-u="vista más de 3 s"></rect>
         <line class="avg" x1="30" y1="71.4" x2="392" y2="71.4"></line>
@@ -392,7 +406,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       </svg>
     </div>
 
-    <div class="c s4">
+    <div class="c marfil s4">
       <h2>Qué buscó la gente</h2>
       <p class="h2sub">Búsquedas que llevaron a nuestro contenido</p>
       <div class="q"><span class="t">brasas tula de allende</span><span class="p">4.3%</span></div>
@@ -424,7 +438,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       </div>
     </div>
 
-    <div class="c s3">
+    <div class="c marfil s3">
       <p class="lab">TikTok · interacciones</p>
       <div class="rows">
         <div class="row"><span class="nm">Me gusta</span><b>97</b></div>
@@ -444,7 +458,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       <p class="foot">127 personas entraron a ver quién publicaba.</p>
     </div>
 
-    <div class="c s3">
+    <div class="c marfil s3">
       <p class="lab">Mensajes</p>
       <div class="rows">
         <div class="row"><span class="nm">Comentarios</span><b>5</b></div>
@@ -511,7 +525,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       <div class="bd">
         <div class="dt2">18 de agosto</div>
         <p class="tx">El arranque es la palanca: se quedó en 11% de retención contra 21% del promedio. Los reels que abren con el producto en el primer segundo sostienen el doble.</p>
-        <div class="st"><div><b>129</b><span>Vistas</span></div><div><b>11.0%</b><span>Retención</span></div></div>
+        <div class="st"><div><b>129</b><span>Vistas</span></div><div><b class="dato-baja">11.0%</b><span>Retención</span></div></div>
         <div class="go">Ver publicación →</div>
       </div>
     </a>
