@@ -128,6 +128,39 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   background:linear-gradient(158deg,#2A2F23,#23281C);border-color:#3A4030}}
 :root[data-theme="dark"] .c.marfil{background:linear-gradient(158deg,#2A2F23,#23281C);border-color:#3A4030}
 
+
+/* jabalí de fondo, discreto y adaptable */
+body{position:relative}
+body::before{
+  content:"";position:fixed;inset:auto -6vw -8vh auto;
+  width:min(52vw,620px);aspect-ratio:231/120;
+  background:url("../img/marca-jabali.png") no-repeat right bottom/contain;
+  opacity:.05;pointer-events:none;z-index:0;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::before{opacity:.07}}
+:root[data-theme="dark"] body::before{opacity:.07}
+.page{position:relative;z-index:1}
+
+/* distintivo de los KPI del contrato */
+.c.kpi{position:relative}
+.c.kpi::after{
+  content:"";position:absolute;top:14px;right:16px;width:15px;height:19px;
+  background:url("../img/marca-llama.png") no-repeat center/contain;opacity:.9;
+}
+.c.kpi.dark::after,.c.kpi.gold::after{opacity:1}
+.sect .fl-mark{width:14px;height:18px;vertical-align:-2px;margin-left:9px;opacity:.9}
+.leyenda{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--soft);margin:0 0 22px}
+.leyenda img{width:13px;height:17px}
+
+/* enlace al plan */
+.planlink{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.planlink .cta{
+  display:inline-flex;align-items:center;gap:9px;background:var(--deep);color:#FFFFE3;
+  text-decoration:none;border-radius:999px;padding:13px 24px;font-size:14.5px;font-weight:600;
+}
+.planlink .cta:hover,.planlink .cta:focus-visible{background:var(--gold);color:#191919;outline:none}
+@media (prefers-reduced-motion: no-preference){.planlink .cta{transition:background .18s,color .18s}}
+
 /* post cards */
 .pc{display:flex;flex-direction:column;background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:inherit}
 .pc:focus-visible{outline:none;box-shadow:0 0 0 3px var(--gold)}
@@ -203,15 +236,14 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
 .brandbar{display:inline-flex;align-items:center;gap:16px;margin-bottom:22px;
   background:linear-gradient(155deg,var(--deep),var(--deep2));
   border-radius:16px;padding:12px 20px;box-shadow:var(--shadow)}
-.brandbar img{height:58px;width:auto;display:block}
-.brandbar img[alt="Freepi"]{height:32px}
-.brandbar .por{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,227,.55);align-self:center}
+.brandbar img{height:54px;width:auto;display:block}
+.brandbar img[alt="Freepi"]{height:38px}
 .brandbar .sep{width:1px;height:30px;background:rgba(244,184,49,.3);flex:none}
 .brandbar .slot{height:44px;min-width:44px;border:1px dashed rgba(244,184,49,.35);border-radius:10px;
   display:flex;align-items:center;justify-content:center;padding:0 12px;
   font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .byline{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:16px}
-.byline img{height:22px;width:auto;opacity:.8}
+.byline img{height:42px;width:auto;opacity:.9}
 .byline .slot{font-size:10px;color:var(--faint)}
 
 /* barras horizontales */
@@ -238,7 +270,6 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     <!-- LOGOS: se rellenan desde web/img/ con scripts/construir-reporte.py -->
     <img src="img/logo-colmillo.png" alt="Colmillo de Jabalí">
     <span class="sep"></span>
-    <span class="por">por</span>
     <img src="img/logo-freepi.png" alt="Freepi">
   </div>
 
@@ -251,19 +282,21 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     <div class="chip">Datos al 29 de agosto</div>
   </div>
 
+  <p class="leyenda"><img src="img/marca-llama.png" alt="">Las tarjetas con la llama son los indicadores que nos pidieron en el contrato.</p>
+
   <div class="bento">
 
-    <div class="c dark s5">
+    <div class="c dark kpi s5">
       <p class="lab">Reproducciones de video</p>
       <p class="big" style="font-size:52px">5,420</p>
-      <p class="foot">El video cargó el mes: se llevó el 90% de todo lo que se vio.</p>
+      <p class="foot">El formato de video tomó la delantera este mes, con el 90% de todas las visualizaciones.</p>
       <div class="rows" style="margin-top:20px">
         <div class="row"><span class="nm">TikTok</span><b>4,600</b></div>
         <div class="row"><span class="nm">Reels de Instagram</span><b>820</b></div>
       </div>
     </div>
 
-    <div class="c mint s3">
+    <div class="c mint kpi s3">
       <p class="lab">Personas alcanzadas</p>
       <p class="big">4,124</p>
       <div class="rows" style="margin-top:14px">
@@ -273,7 +306,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       <p class="foot">En Instagram, 63 de cada 100 no nos seguían.</p>
     </div>
 
-    <div class="c marfil s4">
+    <div class="c marfil kpi s4">
       <p class="lab">Seguidores ganados</p>
       <p class="big">+20</p>
       <div class="rows" style="margin-top:14px">
@@ -284,11 +317,11 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
 
     <div class="c gold s4">
       <p class="lab">Publicaciones</p>
-      <p class="big">17</p>
-      <p class="foot">5 reels, 12 posts y carruseles, y 8 historias. <b>Cada pieza la replicamos en TikTok</b>, así que el total lo contamos una sola vez.</p>
+      <p class="big">19</p>
+      <p class="foot">5 reels, 14 posts y carruseles, y 8 historias. Cada pieza la replicamos en TikTok.</p>
     </div>
 
-    <div class="c s4">
+    <div class="c kpi s4">
       <p class="lab">Interacción · Instagram</p>
       <div class="ring">
         <svg viewBox="0 0 100 100" role="img" aria-label="Tasa de interacción de Instagram: 16.3 por ciento.">
@@ -303,7 +336,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       </div>
     </div>
 
-    <div class="c s4">
+    <div class="c kpi s4">
       <p class="lab">Vistas totales</p>
       <p class="big">5,968</p>
       <div class="rows" style="margin-top:14px">
@@ -331,7 +364,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
         <text class="ax mid" x="427" y="212">15</text><text class="ax mid" x="623.5" y="212">22</text>
         <text class="ax mid" x="791.9" y="212">29</text>
       <g class="hitlayer"><rect class="hit" x="20.0" y="14" width="28.1" height="180" data-t="1 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="48.0" y="14" width="28.1" height="180" data-t="2 de agosto" data-v="13" data-u="cuentas alcanzadas"></rect><rect class="hit" x="76.1" y="14" width="28.1" height="180" data-t="3 de agosto" data-v="120" data-u="cuentas alcanzadas"></rect><rect class="hit" x="104.2" y="14" width="28.1" height="180" data-t="4 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="132.2" y="14" width="28.1" height="180" data-t="5 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="160.3" y="14" width="28.1" height="180" data-t="6 de agosto" data-v="5" data-u="cuentas alcanzadas"></rect><rect class="hit" x="188.4" y="14" width="28.1" height="180" data-t="7 de agosto" data-v="4" data-u="cuentas alcanzadas"></rect><rect class="hit" x="216.5" y="14" width="28.1" height="180" data-t="8 de agosto" data-v="6" data-u="cuentas alcanzadas"></rect><rect class="hit" x="244.5" y="14" width="28.1" height="180" data-t="9 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="272.6" y="14" width="28.1" height="180" data-t="10 de agosto" data-v="0" data-u="cuentas alcanzadas"></rect><rect class="hit" x="300.7" y="14" width="28.1" height="180" data-t="11 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="328.7" y="14" width="28.1" height="180" data-t="12 de agosto" data-v="134" data-u="cuentas alcanzadas"></rect><rect class="hit" x="356.8" y="14" width="28.1" height="180" data-t="13 de agosto" data-v="4" data-u="cuentas alcanzadas"></rect><rect class="hit" x="384.9" y="14" width="28.1" height="180" data-t="14 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="412.9" y="14" width="28.1" height="180" data-t="15 de agosto" data-v="10" data-u="cuentas alcanzadas"></rect><rect class="hit" x="441.0" y="14" width="28.1" height="180" data-t="16 de agosto" data-v="6" data-u="cuentas alcanzadas"></rect><rect class="hit" x="469.1" y="14" width="28.1" height="180" data-t="17 de agosto" data-v="99" data-u="cuentas alcanzadas"></rect><rect class="hit" x="497.2" y="14" width="28.1" height="180" data-t="18 de agosto" data-v="9" data-u="cuentas alcanzadas"></rect><rect class="hit" x="525.2" y="14" width="28.1" height="180" data-t="19 de agosto" data-v="113" data-u="cuentas alcanzadas"></rect><rect class="hit" x="553.3" y="14" width="28.1" height="180" data-t="20 de agosto" data-v="11" data-u="cuentas alcanzadas"></rect><rect class="hit" x="581.4" y="14" width="28.1" height="180" data-t="21 de agosto" data-v="12" data-u="cuentas alcanzadas"></rect><rect class="hit" x="609.4" y="14" width="28.1" height="180" data-t="22 de agosto" data-v="3" data-u="cuentas alcanzadas"></rect><rect class="hit" x="637.5" y="14" width="28.1" height="180" data-t="23 de agosto" data-v="2" data-u="cuentas alcanzadas"></rect><rect class="hit" x="665.6" y="14" width="28.1" height="180" data-t="24 de agosto" data-v="5" data-u="cuentas alcanzadas"></rect><rect class="hit" x="693.6" y="14" width="28.1" height="180" data-t="25 de agosto" data-v="1" data-u="cuentas alcanzadas"></rect><rect class="hit" x="721.7" y="14" width="28.1" height="180" data-t="26 de agosto" data-v="7" data-u="cuentas alcanzadas"></rect><rect class="hit" x="749.8" y="14" width="28.1" height="180" data-t="27 de agosto" data-v="141" data-u="cuentas alcanzadas"></rect><rect class="hit" x="777.9" y="14" width="28.1" height="180" data-t="28 de agosto" data-v="0" data-u="cuentas alcanzadas"></rect></g></svg>
-      <p class="cap">El alcance no llega a goteo, llega por picos. Cinco días se llevaron la mayor parte del mes.</p>
+      <p class="cap">Cinco días se llevaron la mayor parte del alcance del mes.</p>
     </div>
 
     <div class="c s5">
@@ -347,41 +380,46 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
 
     <div class="c s8">
       <h2>Alcance por publicación en Instagram</h2>
-      <p class="h2sub">Las 17 piezas del mes, en orden de publicación</p>
-      <svg viewBox="0 0 800 200" role="img" aria-label="Alcance de las 17 publicaciones de Instagram. Los cinco reels alcanzan entre 109 y 141; los doce posts entre 5 y 14.">
+      <p class="h2sub">Las 19 piezas del mes, en orden de publicación</p>
+      <svg viewBox="0 0 800 200" role="img" aria-label="Alcance de las 19 publicaciones de Instagram en agosto. Los cinco reels alcanzan entre 109 y 143 cuentas; los catorce posts se quedan entre 7 y 14.">
         <line class="gl" x1="34" y1="12" x2="792" y2="12"></line>
         <line class="gl" x1="34" y1="65.3" x2="792" y2="65.3"></line>
         <line class="gl" x1="34" y1="118.7" x2="792" y2="118.7"></line>
         <line class="gl" x1="34" y1="172" x2="792" y2="172"></line>
         <text class="ax end" x="27" y="16">150</text><text class="ax end" x="27" y="69">100</text>
         <text class="ax end" x="27" y="122">50</text><text class="ax end" x="27" y="176">0</text>
-        <rect class="br m" x="42.3" y="162.4" width="28" height="9.6" rx="3" data-t="Post · 1 de agosto" data-v="9" data-u="de alcance"></rect>
-        <rect class="br m" x="86.9" y="160.3" width="28" height="11.7" rx="3" data-t="Post · 3 de agosto" data-v="11" data-u="de alcance"></rect>
-        <rect class="br" x="131.5" y="36.5" width="28" height="135.5" rx="3" data-t="Reel · 4 de agosto" data-v="127" data-u="de alcance"></rect>
-        <rect class="br m" x="176.1" y="157.1" width="28" height="14.9" rx="3" data-t="Post · 6 de agosto" data-v="14" data-u="de alcance"></rect>
-        <rect class="br m" x="220.7" y="161.3" width="28" height="10.7" rx="3" data-t="Post · 8 de agosto" data-v="10" data-u="de alcance"></rect>
-        <rect class="br m" x="265.3" y="160.3" width="28" height="11.7" rx="3" data-t="Post · 9 de agosto" data-v="11" data-u="de alcance"></rect>
-        <rect class="br m" x="309.9" y="160.3" width="28" height="11.7" rx="3" data-t="Post · 12 de agosto" data-v="11" data-u="de alcance"></rect>
-        <rect class="br" x="354.5" y="21.6" width="28" height="150.4" rx="3" data-t="Reel · 13 de agosto" data-v="141" data-u="de alcance"></rect>
-        <rect class="br m" x="399.1" y="161.3" width="28" height="10.7" rx="3" data-t="Post · 14 de agosto" data-v="10" data-u="de alcance"></rect>
-        <rect class="br m" x="443.7" y="162.4" width="28" height="9.6" rx="3" data-t="Post · 14 de agosto" data-v="9" data-u="de alcance"></rect>
-        <rect class="br" x="488.3" y="55.7" width="28" height="116.3" rx="3" data-t="Reel · 18 de agosto" data-v="109" data-u="de alcance"></rect>
-        <rect class="br" x="532.9" y="33.3" width="28" height="138.7" rx="3" data-t="Reel · 19 de agosto" data-v="130" data-u="de alcance"></rect>
-        <rect class="br m" x="577.5" y="163.5" width="28" height="8.5" rx="3" data-t="Post · 21 de agosto" data-v="8" data-u="de alcance"></rect>
-        <rect class="br m" x="622.1" y="163.5" width="28" height="8.5" rx="3" data-t="Post · 22 de agosto" data-v="8" data-u="de alcance"></rect>
-        <rect class="br m" x="666.7" y="164.5" width="28" height="7.5" rx="3" data-t="Post · 25 de agosto" data-v="7" data-u="de alcance"></rect>
-        <rect class="br m" x="711.3" y="166.7" width="28" height="5.3" rx="3" data-t="Post · 26 de agosto" data-v="5" data-u="de alcance"></rect>
-        <rect class="br" x="755.9" y="22.7" width="28" height="149.3" rx="3" data-t="Reel · 28 de agosto" data-v="140" data-u="de alcance"></rect>
-        <text class="bl" x="368.5" y="16">141</text>
-        <text class="ax mid" x="56.3" y="190">1</text><text class="ax mid" x="145.5" y="190">4</text>
-        <text class="ax mid" x="368.5" y="190">13</text><text class="ax mid" x="546.9" y="190">19</text>
-        <text class="ax mid" x="769.9" y="190">28</text>
+        <rect class="br m" x="40.9" y="162.4" width="26" height="9.6" rx="3" data-t="Post · 1 de agosto" data-v="9" data-u="de alcance"></rect>
+        <rect class="br m" x="80.8" y="160.3" width="26" height="11.7" rx="3" data-t="Post · 3 de agosto" data-v="11" data-u="de alcance"></rect>
+        <rect class="br" x="120.7" y="36.5" width="26" height="135.5" rx="3" data-t="Reel · 4 de agosto" data-v="127" data-u="de alcance"></rect>
+        <rect class="br m" x="160.6" y="157.1" width="26" height="14.9" rx="3" data-t="Post · 6 de agosto" data-v="14" data-u="de alcance"></rect>
+        <rect class="br m" x="200.5" y="161.3" width="26" height="10.7" rx="3" data-t="Post · 8 de agosto" data-v="10" data-u="de alcance"></rect>
+        <rect class="br m" x="240.4" y="159.2" width="26" height="12.8" rx="3" data-t="Post · 9 de agosto" data-v="12" data-u="de alcance"></rect>
+        <rect class="br m" x="280.3" y="159.2" width="26" height="12.8" rx="3" data-t="Post · 12 de agosto" data-v="12" data-u="de alcance"></rect>
+        <rect class="br" x="320.2" y="21.6" width="26" height="150.4" rx="3" data-t="Reel · 13 de agosto" data-v="141" data-u="de alcance"></rect>
+        <rect class="br m" x="360.1" y="161.3" width="26" height="10.7" rx="3" data-t="Post · 14 de agosto" data-v="10" data-u="de alcance"></rect>
+        <rect class="br m" x="400.0" y="162.4" width="26" height="9.6" rx="3" data-t="Post · 14 de agosto" data-v="9" data-u="de alcance"></rect>
+        <rect class="br" x="439.9" y="55.7" width="26" height="116.3" rx="3" data-t="Reel · 18 de agosto" data-v="109" data-u="de alcance"></rect>
+        <rect class="br" x="479.8" y="33.3" width="26" height="138.7" rx="3" data-t="Reel · 19 de agosto" data-v="130" data-u="de alcance"></rect>
+        <rect class="br m" x="519.7" y="163.5" width="26" height="8.5" rx="3" data-t="Post · 21 de agosto" data-v="8" data-u="de alcance"></rect>
+        <rect class="br m" x="559.6" y="163.5" width="26" height="8.5" rx="3" data-t="Post · 22 de agosto" data-v="8" data-u="de alcance"></rect>
+        <rect class="br m" x="599.5" y="164.5" width="26" height="7.5" rx="3" data-t="Post · 25 de agosto" data-v="7" data-u="de alcance"></rect>
+        <rect class="br m" x="639.4" y="164.5" width="26" height="7.5" rx="3" data-t="Post · 26 de agosto" data-v="7" data-u="de alcance"></rect>
+        <rect class="br" x="679.3" y="19.5" width="26" height="152.5" rx="3" data-t="Reel · 28 de agosto" data-v="143" data-u="de alcance"></rect>
+        <rect class="br m" x="719.2" y="160.3" width="26" height="11.7" rx="3" data-t="Post · 29 de agosto" data-v="11" data-u="de alcance"></rect>
+        <rect class="br m" x="759.1" y="164.5" width="26" height="7.5" rx="3" data-t="Post · 31 de agosto" data-v="7" data-u="de alcance"></rect>
+        <text class="bl" x="692.3" y="15">143</text>
+        <text class="ax mid" x="53.9" y="190">1</text>
+        <text class="ax mid" x="133.7" y="190">4</text>
+        <text class="ax mid" x="333.2" y="190">13</text>
+        <text class="ax mid" x="492.8" y="190">19</text>
+        <text class="ax mid" x="692.3" y="190">28</text>
+        <text class="ax mid" x="772.1" y="190">31</text>
       </svg>
       <div class="leg">
-        <span><i class="sw g"></i>Reels · 129 de alcance promedio</span>
-        <span><i class="sw m"></i>Posts y carruseles · 9 de alcance promedio</span>
+        <span><i class="sw g"></i>Reels · 130 de alcance promedio</span>
+        <span><i class="sw m"></i>Posts y carruseles · 10 de alcance promedio</span>
       </div>
-      <p class="cap">En el propio listado de Instagram, los cinco reels ocupan los cinco primeros lugares. El primer post no aparece hasta el sexto.</p>
+      <p class="cap">En el propio listado de Instagram, los cinco reels ocupan los cinco primeros lugares del mes.</p>
     </div>
 
     <div class="c chispa s4">
@@ -418,7 +456,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       <div class="q"><span class="t">colmillode.jabali</span><span class="p">0.6%</span></div>
       <div class="q"><span class="t">puro colmillo de jabalí cocinero</span><span class="p">0.6%</span></div>
       <div class="q"><span class="t">restaurante tula amor</span><span class="p">0.6%</span></div>
-      <p class="nota">Dos de las cinco búsquedas son de Tula, semanas después del festival: el evento nos sigue trayendo gente. Y alguien llegó buscando «costillar jabalí», que es justo el diferenciador que estamos empujando.</p>
+      <p class="nota">Dos de las cinco búsquedas son de Tula, semanas después del festival: el evento nos sigue trayendo gente. Y alguien llegó buscando costillar jabalí, que es justo el diferenciador que estamos empujando.</p>
     </div>
 
     <div class="c s4">
@@ -452,7 +490,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       </div>
     </div>
 
-    <div class="c mint s3">
+    <div class="c mint kpi s3">
       <p class="lab">Perfil y contacto</p>
       <div class="rows">
         <div class="row"><span class="nm">Visitas · Instagram</span><b>73</b></div>
@@ -462,30 +500,30 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       <p class="foot">132 personas entraron a ver quién publicaba.</p>
     </div>
 
-    <div class="c marfil s3">
+    <div class="c marfil kpi s3">
       <p class="lab">Mensajes</p>
       <div class="rows">
         <div class="row"><span class="nm">Comentarios</span><b>5</b></div>
         <div class="row"><span class="nm">Mensajes directos</span><b class="pend">Sept.</b></div>
         <div class="row"><span class="nm">Consultas</span><b class="pend">Sept.</b></div>
       </div>
-      <p class="foot">A partir de septiembre les reportamos también mensajes y consultas.</p>
+      <p class="foot">Todo el contenido fue orgánico, por lo que la parte de mensajes no se contabiliza.</p>
     </div>
 
-    <div class="c gold s12">
+    <div class="c gold kpi s12">
       <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between">
         <div>
           <p class="lab">Campañas publicitarias</p>
           <p class="big sm">Sin inversión en agosto</p>
         </div>
         <p style="margin:0;max-width:52ch;font-size:14px;color:var(--soft)">
-          Todo el resultado del mes es orgánico. <b style="color:var(--ink)">La pauta ya está definida</b> y arranca en cuanto nos la compartan para activarla. Desde ese mes se reporta inversión, alcance, costo por resultado, CPC y CPM.
+          Todo el resultado del mes es orgánico. <b style="color:var(--ink)">La pauta ya está definida</b> y empieza en cuanto nos compartan la inversión, para impulsar al máximo las redes y contabilizar inversión, costo por resultado, CPC y CPM.
         </p>
       </div>
     </div>
   </div>
 
-  <h2 class="sect">Publicaciones destacadas</h2>
+  <h2 class="sect">Publicaciones destacadas<img class="fl-mark" src="img/marca-llama.png" alt=""></h2>
   <div class="bento">
     <a class="pc s4" href="https://www.tiktok.com/@colmillode.jabali/video/7677789468794916117" target="_blank" rel="noopener">
       <div class="ph"><div class="tags"><span class="tag win">🏆 Más visto</span><span class="tag">TikTok</span></div>
@@ -556,13 +594,13 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     </div>
   </div>
 
-  <h2 class="sect">Plan de septiembre</h2>
+  <h2 class="sect">Plan de septiembre<img class="fl-mark" src="img/marca-llama.png" alt=""></h2>
   <div class="bento">
     <div class="c s12">
       <div class="steps">
         <div class="st2"><div class="n">1</div><div><h4>Septiembre es el mes en que se cotizan las fiestas de fin de año</h4><p>Quien organiza una posada, una cena de empresa o una boda de noviembre está pidiendo cotizaciones ahora. Es el mes con más intención de compra del trimestre, aunque no haya un solo festival en el calendario. El contenido se orienta al banquete privado y cada pieza cierra pidiendo una fecha.</p></div></div>
-        <div class="st2"><div class="n">2</div><div><h4>El mensaje se amplía: de «sirven jabalí» a «arman la experiencia completa»</h4><p>Agosto logró lo más difícil, que el jabalí quedara pegado al nombre. El riesgo ahora es quedarse ahí, cuando hay cuatro barras, montaje, servicio en el lugar y postre. Septiembre deja el jabalí al frente y abre el resto alrededor.</p></div></div>
-        <div class="st2"><div class="n">3</div><div><h4>El costillar por fin tiene su argumento, y es el centro del mes</h4><p>Cada parte del jabalí se cuece en un tiempo distinto y no todas quedan jugosas. El lomo sería la elección obvia para brasa; ustedes usan costillar, que es el que sale jugoso. Es verificable, y ningún competidor de la zona puede decirlo: la diferencia empieza antes de la brasa.</p></div></div>
+        <div class="st2"><div class="n">2</div><div><h4>El mensaje se amplía: de sirven jabalí a arman la experiencia completa</h4><p>Agosto logró lo más difícil, que el jabalí quedara pegado al nombre. El riesgo ahora es quedarse ahí, cuando hay cuatro barras, montaje, servicio en el lugar y postre. Septiembre se enfoca en los temas relevantes para vender, no únicamente en el jabalí.</p></div></div>
+        <div class="st2"><div class="n">3</div><div><h4>El sazón, no solo el jabalí</h4><p>Nos centraremos en mostrar no solo el jabalí como parte de los platillos, sino en explorar el diferenciador de por qué nuestros platillos tienen un sazón distinto y por qué son mucho más sabrosos que otros. Para eso necesitaremos su apoyo con la información de preparación de los platillos.</p></div></div>
         <div class="st2"><div class="n">4</div><div><h4>Más video, con el mismo número de contenidos</h4><p>Seis reels en lugar de cuatro y diez publicaciones en lugar de doce. El total no se mueve: siguen siendo 24 contenidos. Sin festivales el alcance baja, y el video es el formato que sigue llegando a quien todavía no conoce la marca.</p></div></div>
         <div class="st2"><div class="n">5</div><div><h4>Las historias dejan de informar y empiezan a preguntar</h4><p>En agosto eran versiones chicas de las publicaciones. En septiembre son encuestas: ¿ya probaste jabalí?, ¿qué barra elegirías?, ¿qué estás celebrando? Cada respuesta es una persona levantando la mano, y la última lleva directo al mensaje.</p></div></div>
       </div>
@@ -575,9 +613,22 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
         <div class="row"><span class="nm">Personas alcanzadas</span><b>5,000 · agosto 4,124</b></div>
         <div class="row"><span class="nm">Reproducciones de video</span><b>6,500 · agosto 5,420</b></div>
         <div class="row"><span class="nm">Seguidores netos</span><b>+35 · agosto +20</b></div>
-        <div class="row"><span class="nm">Respuestas a encuestas</span><b>Primer mes de medición</b></div>
       </div>
-      <p class="foot">Son las cifras contra las que nos van a medir el 1 de octubre.</p>
+    </div>
+  </div>
+
+
+  <div class="bento" style="margin-top:14px">
+    <div class="c dark s12">
+      <div class="planlink">
+        <div>
+          <p class="lab">Plan de septiembre</p>
+          <p style="margin:0;max-width:56ch;font-size:14.5px;color:rgba(255,255,227,.85)">
+            El calendario completo del mes, pieza por pieza, con fechas y formatos.
+          </p>
+        </div>
+        <a class="cta" href="https://app.notion.com/p/freepi-marketing/Colmillo-de-Jabal-7360443fa7e78334b25001bae845b1f7?source=copy_link" target="_blank" rel="noopener">Consultar el plan de septiembre →</a>
+      </div>
     </div>
   </div>
 
