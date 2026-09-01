@@ -143,11 +143,13 @@ body::before{
 
 /* distintivo de los KPI del contrato */
 .c.kpi{position:relative}
-.c.kpi::after{
-  content:"";position:absolute;top:14px;right:16px;width:15px;height:19px;
-  background:url("../img/marca-llama.png") no-repeat center/contain;opacity:.9;
+.kpitag{
+  position:absolute;top:13px;right:14px;display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--goldink);
+  background:rgba(244,184,49,.14);border-radius:999px;padding:3px 9px 3px 8px;
 }
-.c.kpi.dark::after,.c.kpi.gold::after{opacity:1}
+.kpitag img{width:11px;height:14px}
+.c.dark .kpitag{color:var(--gold);background:rgba(244,184,49,.18)}
 .sect .fl-mark{width:14px;height:18px;vertical-align:-2px;margin-left:9px;opacity:.9}
 .leyenda{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--soft);margin:0 0 22px}
 .leyenda img{width:13px;height:17px}
@@ -282,11 +284,12 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     <div class="chip">Datos al 29 de agosto</div>
   </div>
 
-  <p class="leyenda"><img src="img/marca-llama.png" alt="">Las tarjetas con la llama son los indicadores que nos pidieron en el contrato.</p>
+  <p class="leyenda"><img src="img/marca-llama.png" alt="">La llama y la letra marcan cada uno de los diez indicadores del contrato, de la a a la j.</p>
 
   <div class="bento">
 
     <div class="c dark kpi s5">
+      <span class="kpitag">c<img src="img/marca-llama.png" alt=""></span>
       <p class="lab">Reproducciones de video</p>
       <p class="big" style="font-size:52px">5,420</p>
       <p class="foot">El formato de video tomó la delantera este mes, con el 90% de todas las visualizaciones.</p>
@@ -297,6 +300,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     </div>
 
     <div class="c mint kpi s3">
+      <span class="kpitag">a<img src="img/marca-llama.png" alt=""></span>
       <p class="lab">Personas alcanzadas</p>
       <p class="big">4,124</p>
       <div class="rows" style="margin-top:14px">
@@ -307,6 +311,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     </div>
 
     <div class="c marfil kpi s4">
+      <span class="kpitag">d<img src="img/marca-llama.png" alt=""></span>
       <p class="lab">Seguidores ganados</p>
       <p class="big">+20</p>
       <div class="rows" style="margin-top:14px">
@@ -322,7 +327,8 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     </div>
 
     <div class="c kpi s4">
-      <p class="lab">Interacción · Instagram</p>
+      <span class="kpitag">e<img src="img/marca-llama.png" alt=""></span>
+      <p class="lab">Tasa de interacción</p>
       <div class="ring">
         <svg viewBox="0 0 100 100" role="img" aria-label="Tasa de interacción de Instagram: 16.3 por ciento.">
           <circle cx="50" cy="50" r="40" fill="none" stroke="var(--hair)" stroke-width="13"></circle>
@@ -331,13 +337,18 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
         </svg>
         <div>
           <p class="big sm">16.3%</p>
-          <p class="foot">102 interacciones<br>sobre 624 personas</p>
+          <p class="foot">Instagram · 102 interacciones<br>sobre 624 personas</p>
         </div>
       </div>
+      <div class="rows" style="margin-top:14px">
+        <div class="row"><span class="nm">TikTok</span><b>3.1%</b></div>
+      </div>
+      <p class="foot">En TikTok, 107 interacciones sobre 3,500 personas.</p>
     </div>
 
     <div class="c kpi s4">
-      <p class="lab">Vistas totales</p>
+      <span class="kpitag">b<img src="img/marca-llama.png" alt=""></span>
+      <p class="lab">Impresiones generadas</p>
       <p class="big">5,968</p>
       <div class="rows" style="margin-top:14px">
         <div class="row"><span class="nm">TikTok</span><b>4,600</b></div>
@@ -491,29 +502,33 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     </div>
 
     <div class="c mint kpi s3">
-      <p class="lab">Perfil y contacto</p>
+      <span class="kpitag">g<img src="img/marca-llama.png" alt=""></span>
+      <p class="lab">Clics al perfil, sitio y WhatsApp</p>
       <div class="rows">
-        <div class="row"><span class="nm">Visitas · Instagram</span><b>73</b></div>
-        <div class="row"><span class="nm">Visitas · TikTok</span><b>59</b></div>
-        <div class="row"><span class="nm">Clics al enlace</span><b>1</b></div>
+        <div class="row"><span class="nm">Clics al perfil · Instagram</span><b>73</b></div>
+        <div class="row"><span class="nm">Clics al perfil · TikTok</span><b>59</b></div>
+        <div class="row"><span class="nm">Clics al sitio web</span><b>1</b></div>
+        <div class="row"><span class="nm">Clics a WhatsApp</span><b class="pend">—</b></div>
       </div>
-      <p class="foot">132 personas entraron a ver quién publicaba.</p>
+      <p class="foot">132 personas entraron a ver quién publicaba. El botón de WhatsApp se habilita este mes.</p>
     </div>
 
     <div class="c marfil kpi s3">
+      <span class="kpitag">f<img src="img/marca-llama.png" alt=""></span>
       <p class="lab">Mensajes</p>
       <div class="rows">
-        <div class="row"><span class="nm">Comentarios</span><b>5</b></div>
-        <div class="row"><span class="nm">Mensajes directos</span><b class="pend">Sept.</b></div>
-        <div class="row"><span class="nm">Consultas</span><b class="pend">Sept.</b></div>
+        <div class="row"><span class="nm">Comentarios recibidos</span><b>5</b></div>
+        <div class="row"><span class="nm">Mensajes directos</span><b class="pend">—</b></div>
+        <div class="row"><span class="nm">Consultas</span><b class="pend">—</b></div>
       </div>
-      <p class="foot">Todo el contenido fue orgánico, por lo que la parte de mensajes no se contabiliza.</p>
+      <p class="foot">El conteo de mensajes directos y consultas se incorpora a partir de este mes.</p>
     </div>
 
     <div class="c gold kpi s12">
       <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between">
         <div>
-          <p class="lab">Campañas publicitarias</p>
+          <span class="kpitag">h<img src="img/marca-llama.png" alt=""></span>
+      <p class="lab">Campañas publicitarias</p>
           <p class="big sm">Sin inversión en agosto</p>
         </div>
         <p style="margin:0;max-width:52ch;font-size:14px;color:var(--soft)">
@@ -523,7 +538,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     </div>
   </div>
 
-  <h2 class="sect">Publicaciones destacadas<img class="fl-mark" src="img/marca-llama.png" alt=""></h2>
+  <h2 class="sect">Publicaciones destacadas<img class="fl-mark" src="img/marca-llama.png" alt=""><span class="kpitag" style="position:static;margin-left:8px">i</span></h2>
   <div class="bento">
     <a class="pc s4" href="https://www.tiktok.com/@colmillode.jabali/video/7677789468794916117" target="_blank" rel="noopener">
       <div class="ph"><div class="tags"><span class="tag win">🏆 Más visto</span><span class="tag">TikTok</span></div>
@@ -559,7 +574,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     </a>
   </div>
 
-  <h2 class="sect">Con margen de crecimiento</h2>
+  <h2 class="sect">Menor desempeño, y qué corregimos</h2>
   <div class="bento">
     <a class="pc s4" href="https://www.instagram.com/reel/DcKaX2TAujX/" target="_blank" rel="noopener">
       <div class="ph"><div class="tags"><span class="tag">Reel</span></div>
@@ -594,7 +609,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     </div>
   </div>
 
-  <h2 class="sect">Plan de septiembre<img class="fl-mark" src="img/marca-llama.png" alt=""></h2>
+  <h2 class="sect">Plan de septiembre<img class="fl-mark" src="img/marca-llama.png" alt=""><span class="kpitag" style="position:static;margin-left:8px">j</span></h2>
   <div class="bento">
     <div class="c s12">
       <div class="steps">
