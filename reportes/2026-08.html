@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Reporte mensual de desempeno de Colmillo de Jabali en Instagram y TikTok. Agosto de 2026.">
+<meta name="description" content="Reporte de desempeño de agosto y cierre del proyecto de Colmillo de Jabalí en Instagram y TikTok, 2026.">
 <meta name="robots" content="noindex, nofollow">
 <title>Colmillo de Jabalí · Agosto 2026</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@400;500;600;700&display=swap">
@@ -15,7 +15,7 @@
   --gold1:#FCEBC0; --gold2:#F5D693;
   --deep:#1C3A2E; --deep2:#14291F;
   --ink:#171A18; --soft:#5C6B62; --faint:#8E9A93;
-  --hair:#E2E2D2; --gold:#F4B831; --goldink:#8F6608;
+  --hair:#E2E2D2; --gold:#F4B831; --goldink:#8F6608; --fire:#DD2222; --serie-ig:#1C3A2E;
   --shadow:0 1px 2px rgba(28,58,46,.05), 0 8px 24px -12px rgba(28,58,46,.16);
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
@@ -24,7 +24,7 @@
   --gold1:#4E3C12; --gold2:#63501B;
   --deep:#0A150F; --deep2:#060E0A;
   --ink:#F1F0DC; --soft:#A5BAAC; --faint:#748C7D;
-  --hair:#24382C; --gold:#F4B831; --goldink:#F4B831;
+  --hair:#24382C; --gold:#F4B831; --goldink:#F4B831; --fire:#EF5B50; --serie-ig:#6FB08A;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
 }}
 :root[data-theme="dark"]{
@@ -33,7 +33,7 @@
   --gold1:#4E3C12; --gold2:#63501B;
   --deep:#0A150F; --deep2:#060E0A;
   --ink:#F1F0DC; --soft:#A5BAAC; --faint:#748C7D;
-  --hair:#24382C; --gold:#F4B831; --goldink:#F4B831;
+  --hair:#24382C; --gold:#F4B831; --goldink:#F4B831; --fire:#EF5B50; --serie-ig:#6FB08A;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
 }
 *{box-sizing:border-box}
@@ -267,18 +267,127 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
 .q .t{color:var(--ink)}
 .q .p{color:var(--soft);font-variant-numeric:tabular-nums;font-weight:600}
 .nota{font-size:12.5px;color:var(--soft);margin:14px 0 0;padding-left:14px;border-left:2px solid var(--gold)}
+
+/* ---------- pestañas ---------- */
+.cabecera{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 20px;margin-bottom:26px}
+.cabecera .brandbar{margin-bottom:0}
+.tabs{display:inline-flex;gap:4px;padding:5px;background:var(--card);border-radius:999px;box-shadow:var(--shadow)}
+.tab{appearance:none;border:0;background:transparent;color:var(--soft);cursor:pointer;white-space:nowrap;
+  font:600 13.5px/1 "Work Sans",-apple-system,BlinkMacSystemFont,sans-serif;padding:11px 18px;border-radius:999px}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--deep);color:#FFFFE3}
+.tab:focus-visible{outline:none;box-shadow:0 0 0 3px var(--gold)}
+@media (prefers-reduced-motion: no-preference){.tab{transition:background .18s,color .18s}}
+@media(max-width:520px){.tabs{width:100%}.tab{flex:1;padding:11px 8px;font-size:12.5px}}
+
+/* ---------- cierre ---------- */
+.tesis-t{font-family:"Noto Serif",Georgia,serif;font-weight:400;font-size:clamp(19px,2.3vw,25px);line-height:1.38;
+  margin:0;max-width:54ch;text-wrap:balance;color:#FFFFE3}
+.cifras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px;padding-top:22px;
+  border-top:1px solid rgba(244,184,49,.22)}
+.cifras .big{color:var(--gold);font-size:52px}
+@media(max-width:600px){.cifras{grid-template-columns:1fr;gap:14px}}
+.obj{display:flex;flex-direction:column;gap:2px;padding:10px 0;border-bottom:1px solid var(--hair);font-size:13.5px}
+.obj:first-child{padding-top:0}
+.obj:last-child{border-bottom:none;padding-bottom:0}
+.obj b{font-weight:600}
+.obj span{color:var(--soft);line-height:1.45}
+.mezcla{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mezcla .foot{margin-top:4px}
+
+.cal-wrap{overflow-x:auto;padding-bottom:2px}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;min-width:360px}
+.cal .dow{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:0 2px}
+.dia{min-height:78px;border-radius:12px;background:var(--bg);padding:7px 8px 8px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.dia.vacio{background:transparent}
+.dia.pub{background:linear-gradient(150deg,var(--mint1),var(--mint2))}
+.dia.despues{background:transparent;box-shadow:inset 0 0 0 1px var(--hair)}
+.dia .n{display:flex;justify-content:space-between;align-items:baseline;gap:4px;font-size:11.5px;font-weight:600;
+  color:var(--soft);font-variant-numeric:tabular-nums}
+.dia .n em{font-style:normal;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--fire)}
+.pz{display:flex;align-items:center;gap:6px;font-size:11px;line-height:1.2;color:var(--ink);min-width:0}
+.pz i{flex:none;width:9px;height:9px}
+.pz.reel i{background:var(--gold);border-radius:50%}
+.pz.feed i{background:var(--serie-ig);border-radius:2px}
+.pz.hist i{border-radius:50%;box-shadow:inset 0 0 0 2px var(--soft)}
+.pz .ok{margin-left:auto;color:var(--goldink);font-weight:700}
+.pz[data-v]:hover,.pz.on{text-decoration:underline;text-underline-offset:2px}
+@media(max-width:760px){.pz span{display:none}.dia{min-height:58px}.dia .n em{display:none}}
+.sw.rd{background:var(--gold);border-radius:50%}
+.sw.sq{background:var(--serie-ig);border-radius:2px}
+.sw.hs{border-radius:50%;box-shadow:inset 0 0 0 2px var(--soft)}
+.sw.pubk{background:var(--mint2)}
+.sw.desp{box-shadow:inset 0 0 0 1px var(--faint)}
+.dia.lista{background:transparent;box-shadow:inset 0 0 0 1.5px var(--goldink)}
+.sw.lista{box-shadow:inset 0 0 0 1.5px var(--goldink)}
+.hist9{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:26px;align-items:center}
+.hist9 h2{text-wrap:balance}
+.hist9-p{font-size:14px;line-height:1.55;color:var(--soft);margin:0 0 10px;max-width:40ch}
+.hist9-img{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.hist9-img figure{margin:0;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:var(--hair);box-shadow:var(--shadow)}
+.hist9-img img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:800px){.hist9{grid-template-columns:1fr;gap:18px}}
+@media(max-width:480px){.hist9-img{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.agosto6{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 20px}
+.agosto6 .foot{margin-top:5px}
+@media(max-width:600px){.agosto6{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tesis-s{font-size:15px;line-height:1.55;color:rgba(255,255,227,.88);margin:0 0 18px;max-width:52ch}
+.c.dark ul.pts li{color:rgba(255,255,227,.82)}
+.cta-t{display:inline-flex;align-items:center;gap:8px;margin-top:22px;background:var(--gold);color:#191919;
+  text-decoration:none;border-radius:999px;padding:12px 22px;font-size:14px;font-weight:600}
+.cta-t:hover,.cta-t:focus-visible{background:#FFFFE3;outline:none}
+@media (prefers-reduced-motion: no-preference){.cta-t{transition:background .18s}}
+
+.cinco{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.cinco .pc .bd{padding:14px 16px 16px;gap:10px}
+.cinco .pc .tx{font-size:13px}
+.plats{margin-top:auto;display:flex;flex-direction:column;gap:9px}
+.plat{display:flex;flex-direction:column;gap:5px;padding-top:9px;border-top:1px solid var(--hair)}
+.plat>span{font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.plat .st{margin-top:0;padding-top:0;gap:14px}
+.plat .st div b{font-size:17px}
+.plat .solo{font-size:12px;color:var(--faint);line-height:1.9}
+@media(max-width:1000px){
+  .cinco{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(220px,40%);
+    overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 12px}
+  .cinco>*{scroll-snap-align:start}
+}
+@media(max-width:600px){.cinco{grid-auto-columns:76%}}
+
+.sb{display:flex;flex-direction:column;gap:15px;margin-top:6px}
+.sbr{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:13.5px}
+.sbr .nm{color:var(--soft)}
+.sbr .vl{font-weight:600;font-variant-numeric:tabular-nums}
+.sbr .tr{grid-column:1/-1;display:flex;gap:2px;height:12px}
+.seg{height:100%;min-width:3px;border-radius:3px}
+.seg.ig{background:var(--serie-ig)}
+.seg.tk{background:var(--gold)}
+.seg[data-v]:hover,.seg.on{opacity:.75}
+.sw.ig{background:var(--serie-ig)}
+.sw.tk{background:var(--gold)}
+.row.entrega{justify-content:flex-start;align-items:flex-start;padding:12px 0}
+.entrega span{font-size:13.5px;color:var(--soft);line-height:1.5}
+.entrega span b{display:block;color:var(--ink);font-weight:600;margin-bottom:1px}
 </style>
 </head>
 <body>
 <div class="page">
 
-  <div class="brandbar">
-    <!-- LOGOS: se rellenan desde web/img/ con scripts/construir-reporte.py -->
-    <img src="../img/logo-colmillo.png" alt="Colmillo de Jabalí">
-    <span class="sep"></span>
-    <img src="../img/logo-freepi.png" alt="Freepi">
+  <div class="cabecera">
+    <div class="brandbar">
+      <!-- LOGOS: se rellenan desde web/img/ con scripts/construir-reporte.py -->
+      <img src="../img/logo-colmillo.png" alt="Colmillo de Jabalí">
+      <span class="sep"></span>
+      <img src="../img/logo-freepi.png" alt="Freepi">
+    </div>
+    <div class="tabs" role="tablist" aria-label="Secciones del reporte">
+      <button class="tab" role="tab" id="tab-agosto" data-tab="agosto" aria-controls="panel-agosto" aria-selected="true">Resultados de agosto</button>
+      <button class="tab" role="tab" id="tab-cierre" data-tab="cierre" aria-controls="panel-cierre" aria-selected="false" tabindex="-1">Cierre del proyecto</button>
+    </div>
   </div>
 
+  <section id="panel-agosto" role="tabpanel" aria-labelledby="tab-agosto">
   <div class="top">
     <div>
       <p class="kick">Reporte mensual de desempeño</p>
@@ -396,31 +505,31 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
         <line class="gl" x1="34" y1="172" x2="792" y2="172"></line>
         <text class="ax end" x="27" y="16">150</text><text class="ax end" x="27" y="69">100</text>
         <text class="ax end" x="27" y="122">50</text><text class="ax end" x="27" y="176">0</text>
-        <rect class="br m" x="40.9" y="162.4" width="26" height="9.6" rx="3" data-t="Post · 1 de agosto" data-v="9" data-u="de alcance"></rect>
+        <rect class="br m" x="40.9" y="162.4" width="26" height="9.6" rx="3" data-t="Post · 31 de julio" data-v="9" data-u="de alcance"></rect>
         <rect class="br m" x="80.8" y="160.3" width="26" height="11.7" rx="3" data-t="Post · 3 de agosto" data-v="11" data-u="de alcance"></rect>
-        <rect class="br" x="120.7" y="36.5" width="26" height="135.5" rx="3" data-t="Reel · 4 de agosto" data-v="127" data-u="de alcance"></rect>
-        <rect class="br m" x="160.6" y="157.1" width="26" height="14.9" rx="3" data-t="Post · 6 de agosto" data-v="14" data-u="de alcance"></rect>
-        <rect class="br m" x="200.5" y="161.3" width="26" height="10.7" rx="3" data-t="Post · 8 de agosto" data-v="10" data-u="de alcance"></rect>
+        <rect class="br" x="120.7" y="36.5" width="26" height="135.5" rx="3" data-t="Reel · 3 de agosto" data-v="127" data-u="de alcance"></rect>
+        <rect class="br m" x="160.6" y="157.1" width="26" height="14.9" rx="3" data-t="Post · 5 de agosto" data-v="14" data-u="de alcance"></rect>
+        <rect class="br m" x="200.5" y="161.3" width="26" height="10.7" rx="3" data-t="Post · 7 de agosto" data-v="10" data-u="de alcance"></rect>
         <rect class="br m" x="240.4" y="159.2" width="26" height="12.8" rx="3" data-t="Post · 9 de agosto" data-v="12" data-u="de alcance"></rect>
-        <rect class="br m" x="280.3" y="159.2" width="26" height="12.8" rx="3" data-t="Post · 12 de agosto" data-v="12" data-u="de alcance"></rect>
-        <rect class="br" x="320.2" y="21.6" width="26" height="150.4" rx="3" data-t="Reel · 13 de agosto" data-v="141" data-u="de alcance"></rect>
-        <rect class="br m" x="360.1" y="161.3" width="26" height="10.7" rx="3" data-t="Post · 14 de agosto" data-v="10" data-u="de alcance"></rect>
+        <rect class="br m" x="280.3" y="159.2" width="26" height="12.8" rx="3" data-t="Post · 11 de agosto" data-v="12" data-u="de alcance"></rect>
+        <rect class="br" x="320.2" y="21.6" width="26" height="150.4" rx="3" data-t="Reel · 12 de agosto" data-v="141" data-u="de alcance"></rect>
+        <rect class="br m" x="360.1" y="161.3" width="26" height="10.7" rx="3" data-t="Post · 13 de agosto" data-v="10" data-u="de alcance"></rect>
         <rect class="br m" x="400.0" y="162.4" width="26" height="9.6" rx="3" data-t="Post · 14 de agosto" data-v="9" data-u="de alcance"></rect>
-        <rect class="br" x="439.9" y="55.7" width="26" height="116.3" rx="3" data-t="Reel · 18 de agosto" data-v="109" data-u="de alcance"></rect>
+        <rect class="br" x="439.9" y="55.7" width="26" height="116.3" rx="3" data-t="Reel · 17 de agosto" data-v="109" data-u="de alcance"></rect>
         <rect class="br" x="479.8" y="33.3" width="26" height="138.7" rx="3" data-t="Reel · 19 de agosto" data-v="130" data-u="de alcance"></rect>
-        <rect class="br m" x="519.7" y="163.5" width="26" height="8.5" rx="3" data-t="Post · 21 de agosto" data-v="8" data-u="de alcance"></rect>
-        <rect class="br m" x="559.6" y="163.5" width="26" height="8.5" rx="3" data-t="Post · 22 de agosto" data-v="8" data-u="de alcance"></rect>
-        <rect class="br m" x="599.5" y="164.5" width="26" height="7.5" rx="3" data-t="Post · 25 de agosto" data-v="7" data-u="de alcance"></rect>
+        <rect class="br m" x="519.7" y="163.5" width="26" height="8.5" rx="3" data-t="Post · 20 de agosto" data-v="8" data-u="de alcance"></rect>
+        <rect class="br m" x="559.6" y="163.5" width="26" height="8.5" rx="3" data-t="Post · 21 de agosto" data-v="8" data-u="de alcance"></rect>
+        <rect class="br m" x="599.5" y="164.5" width="26" height="7.5" rx="3" data-t="Post · 24 de agosto" data-v="7" data-u="de alcance"></rect>
         <rect class="br m" x="639.4" y="164.5" width="26" height="7.5" rx="3" data-t="Post · 26 de agosto" data-v="7" data-u="de alcance"></rect>
-        <rect class="br" x="679.3" y="19.5" width="26" height="152.5" rx="3" data-t="Reel · 28 de agosto" data-v="143" data-u="de alcance"></rect>
+        <rect class="br" x="679.3" y="19.5" width="26" height="152.5" rx="3" data-t="Reel · 27 de agosto" data-v="143" data-u="de alcance"></rect>
         <rect class="br m" x="719.2" y="160.3" width="26" height="11.7" rx="3" data-t="Post · 29 de agosto" data-v="11" data-u="de alcance"></rect>
         <rect class="br m" x="759.1" y="164.5" width="26" height="7.5" rx="3" data-t="Post · 31 de agosto" data-v="7" data-u="de alcance"></rect>
         <text class="bl" x="692.3" y="15">143</text>
-        <text class="ax mid" x="53.9" y="190">1</text>
-        <text class="ax mid" x="133.7" y="190">4</text>
-        <text class="ax mid" x="333.2" y="190">13</text>
+        <text class="ax mid" x="53.9" y="190">31 jul</text>
+        <text class="ax mid" x="133.7" y="190">3</text>
+        <text class="ax mid" x="333.2" y="190">12</text>
         <text class="ax mid" x="492.8" y="190">19</text>
-        <text class="ax mid" x="692.3" y="190">28</text>
+        <text class="ax mid" x="692.3" y="190">27</text>
         <text class="ax mid" x="772.1" y="190">31</text>
       </svg>
       <div class="leg">
@@ -432,25 +541,25 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     <div class="c chispa s4">
       <h2>Retención de reels</h2>
       <p class="h2sub">Reproducciones que pasan de 3 segundos</p>
-      <svg viewBox="0 0 400 210" role="img" aria-label="Retención de los cinco reels. El del 19 llega a 26 por ciento y el del 18 a 11, con promedio de 21.1.">
+      <svg viewBox="0 0 400 210" role="img" aria-label="Retención de los cinco reels. El del 19 llega a 26 por ciento y el del 17 a 11, con promedio de 21.1.">
         <line class="gl" x1="30" y1="30" x2="392" y2="30"></line>
         <line class="gl" x1="30" y1="100" x2="392" y2="100"></line>
         <line class="gl" x1="30" y1="170" x2="392" y2="170"></line>
         <text class="ax end" x="24" y="34">30%</text><text class="ax end" x="24" y="104">15%</text>
         <text class="ax end" x="24" y="174">0</text>
-        <rect class="br" x="45" y="73.9" width="44" height="96.1" rx="4" data-t="Reel del 4 de agosto" data-v="20.6%" data-u="vista más de 3 s"></rect>
-        <rect class="br" x="117" y="59" width="44" height="111" rx="4" data-t="Reel del 13 de agosto" data-v="23.8%" data-u="vista más de 3 s"></rect>
-        <rect class="br baja" x="189" y="118.7" width="44" height="51.3" rx="4" data-t="Reel del 18 de agosto" data-v="11.0%" data-u="vista más de 3 s"></rect>
+        <rect class="br" x="45" y="73.9" width="44" height="96.1" rx="4" data-t="Reel del 3 de agosto" data-v="20.6%" data-u="vista más de 3 s"></rect>
+        <rect class="br" x="117" y="59" width="44" height="111" rx="4" data-t="Reel del 12 de agosto" data-v="23.8%" data-u="vista más de 3 s"></rect>
+        <rect class="br baja" x="189" y="118.7" width="44" height="51.3" rx="4" data-t="Reel del 17 de agosto" data-v="11.0%" data-u="vista más de 3 s"></rect>
         <rect class="br" x="261" y="48.7" width="44" height="121.3" rx="4" data-t="Reel del 19 de agosto" data-v="26.0%" data-u="vista más de 3 s"></rect>
-        <rect class="br" x="333" y="56.6" width="44" height="113.4" rx="4" data-t="Reel del 28 de agosto" data-v="24.3%" data-u="vista más de 3 s"></rect>
+        <rect class="br" x="333" y="56.6" width="44" height="113.4" rx="4" data-t="Reel del 27 de agosto" data-v="24.3%" data-u="vista más de 3 s"></rect>
         <line class="avg" x1="30" y1="71.4" x2="392" y2="71.4"></line>
         <text class="ax end" x="392" y="66">prom. 21.1%</text>
         <text class="bl" x="67" y="68">20.6</text><text class="bl" x="139" y="53">23.8</text>
         <text class="bl" x="211" y="113">11.0</text><text class="bl" x="283" y="43">26.0</text>
         <text class="bl" x="355" y="51">24.3</text>
-        <text class="ax mid" x="67" y="190">4</text><text class="ax mid" x="139" y="190">13</text>
-        <text class="ax mid" x="211" y="190">18</text><text class="ax mid" x="283" y="190">19</text>
-        <text class="ax mid" x="355" y="190">28</text>
+        <text class="ax mid" x="67" y="190">3</text><text class="ax mid" x="139" y="190">12</text>
+        <text class="ax mid" x="211" y="190">17</text><text class="ax mid" x="283" y="190">19</text>
+        <text class="ax mid" x="355" y="190">27</text>
         <text class="ax mid" x="211" y="204">agosto</text>
       </svg>
     </div>
@@ -535,9 +644,9 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
   <div class="bento">
     <a class="pc s4" href="https://www.tiktok.com/@colmillode.jabali/video/7677789468794916117" target="_blank" rel="noopener">
       <div class="ph"><div class="tags"><span class="tag win">🏆 Más visto</span><span class="tag">TikTok</span></div>
-        <img loading="lazy" src="../img/portadas/2026-08/tk25.jpg" alt="Portada del video de la barra de dulces mexicanos, del 25 de agosto"></div>
+        <img loading="lazy" src="../img/portadas/2026-08/tk25.jpg" alt="Portada del video de la barra de dulces mexicanos, del 24 de agosto"></div>
       <div class="bd">
-        <div class="dt2">25 de agosto</div>
+        <div class="dt2">24 de agosto</div>
         <p class="tx">🍬 Tu banquete, con colmillo. Al cierre sale un bowl grande de dulce mexicano: Pelón Pelo Rico, Lucas Muecas, Rocaleta, Miguelito, mangos enchilados y tamarindos.</p>
         <div class="st"><div><b>580</b><span>Vistas</span></div><div><b>24</b><span>Me gusta</span></div><div><b>2</b><span>Coment.</span></div></div>
         <div class="go">Ver publicación →</div>
@@ -557,9 +666,9 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
 
     <a class="pc s4" href="https://www.instagram.com/reel/DckNWghFd9V/" target="_blank" rel="noopener">
       <div class="ph"><div class="tags"><span class="tag win">🏆 Mayor alcance</span><span class="tag">Reel</span></div>
-        <img loading="lazy" src="../img/portadas/2026-08/ig28.jpg" alt="Portada del reel de la noche mexicana, del 28 de agosto"></div>
+        <img loading="lazy" src="../img/portadas/2026-08/ig28.jpg" alt="Portada del reel de la noche mexicana, del 27 de agosto"></div>
       <div class="bd">
-        <div class="dt2">28 de agosto</div>
+        <div class="dt2">27 de agosto</div>
         <p class="tx">🔥 Ya tienes todo para tu noche mexicana. Nosotros llevamos lo del centro de la mesa 🐗: la parrilla llega a tu evento, el carbón se prende ahí, y de ahí sale el colmillo.</p>
         <div class="st"><div><b>143</b><span>Alcance</span></div><div><b>195</b><span>Vistas</span></div><div><b>24.3%</b><span>Retención</span></div></div>
         <div class="go">Ver publicación →</div>
@@ -571,9 +680,9 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
   <div class="bento">
     <a class="pc s4" href="https://www.instagram.com/reel/DcKaX2TAujX/" target="_blank" rel="noopener">
       <div class="ph"><div class="tags"><span class="tag">Reel</span></div>
-        <img loading="lazy" src="../img/portadas/2026-08/ig18.jpg" alt="Portada del reel del costillar servido, del 18 de agosto"></div>
+        <img loading="lazy" src="../img/portadas/2026-08/ig18.jpg" alt="Portada del reel del costillar servido, del 17 de agosto"></div>
       <div class="bd">
-        <div class="dt2">18 de agosto</div>
+        <div class="dt2">17 de agosto</div>
         <p class="tx">El arranque es la palanca. Se quedó en 11% contra 21% del promedio, y los reels que abren con el producto en el primer segundo aguantan el doble. Eso corregimos.</p>
         <div class="st"><div><b>129</b><span>Vistas</span></div><div><b class="dato-baja">11.0%</b><span>Retención</span></div></div>
         <div class="go">Ver publicación →</div>
@@ -595,7 +704,7 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
       <h2>Qué nos dicen</h2>
       <p class="h2sub">Lectura del mes</p>
       <ul class="pts">
-        <li><b>Lo que grabamos en evento real es lo que corre.</b> Las publicaciones más vistas salieron de Tula Beer Fest o del producto ya servido.</li>
+        <li><b>Lo que grabamos en evento real es lo que atrae.</b> Las publicaciones más vistas salieron de Tula Beer Fest o del producto ya servido.</li>
         <li><b>La barra de dulces es nuestro mejor gancho, pero solo en video.</b> 580 vistas en TikTok contra 35 como carrusel en Instagram.</li>
         <li><b>TikTok es la red que nos está abriendo la puerta.</b> Nueve de cada diez reproducciones llegan de gente que no nos conocía.</li>
       </ul>
@@ -640,8 +749,322 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
     </div>
   </div>
 
+  </section>
+
+  <section id="panel-cierre" role="tabpanel" aria-labelledby="tab-cierre" hidden>
+  <div class="top">
+    <div>
+      <p class="kick">Cierre del proyecto</p>
+      <h1>Agosto y septiembre 2026</h1>
+      <p class="sub">Colmillo de Jabalí · Lo que planeamos, medimos y publicamos</p>
+    </div>
+    <div class="chip">Datos al 9 de septiembre</div>
+  </div>
+
+  <div class="bento">
+    <div class="c dark s12">
+      <p class="lab">Seis semanas de trabajo</p>
+      <p class="tesis-t">Del primer reel, el 30 de julio, al último carrusel, el 8 de septiembre: construimos la estrategia, medimos cada mes siguiendo lo contratado y publicamos en Instagram y TikTok.</p>
+      <div class="cifras">
+        <div><p class="big">25</p><p class="foot">publicaciones en el feed, entre agosto y septiembre</p></div>
+        <div><p class="big">24</p><p class="foot">contenidos planeados para septiembre, con fecha y formato</p></div>
+        <div><p class="big">10</p><p class="foot">indicadores del contrato, medidos en el reporte</p></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sect">La planeación</h2>
+  <div class="bento">
+    <div class="c s4">
+      <p class="lab">Cuatro objetivos</p>
+      <div class="obj"><b>Comercial</b><span>Que lleguen consultas con intención real: eventos de 25 personas o más, dentro de la zona y con fecha.</span></div>
+      <div class="obj"><b>De marca</b><span>Ocupar el territorio de fuego, tierra y tradición, que nadie más en la categoría está usando.</span></div>
+      <div class="obj"><b>De plataforma</b><span>Audiencia local en las cinco zonas, sin sede física: ubicación por publicación y hashtags de zona.</span></div>
+      <div class="obj"><b>De prueba</b><span>Convertir cada festival en material que se reutiliza durante semanas.</span></div>
+    </div>
+    <div class="c marfil s4">
+      <p class="lab">Cinco pilares de contenido</p>
+      <div class="obj"><b>Jabalí, el diferenciador</b><span>Lo que ninguna otra marca de la categoría puede publicar.</span></div>
+      <div class="obj"><b>Banquete privado</b><span>Las barras, la mesa y el servicio: lo que se cotiza.</span></div>
+      <div class="obj"><b>Frente público</b><span>Los festivales, la prueba en vivo de que la operación funciona.</span></div>
+      <div class="obj"><b>Brasa y oficio</b><span>Fuego, humo y carbón. El protagonista es la brasa.</span></div>
+      <div class="obj"><b>Marca y reglas del juego</b><span>Zona, mínimo de 25 personas y cómo se cotiza.</span></div>
+    </div>
+    <div class="c s4">
+      <p class="lab">Tres públicos</p>
+      <div class="obj"><b>Evento social privado</b><span>Bodas, XV años, bautizos y cumpleaños grandes. Es el ingreso principal y decide con meses de anticipación.</span></div>
+      <div class="obj"><b>Corporativo</b><span>Posadas, aniversarios y cenas de empresa. Compra tranquilidad, y quien organiza la posada cotiza en septiembre.</span></div>
+      <div class="obj"><b>Público de festival</b><span>Más audiencia que cliente: da alcance y prueba social, y una parte sí organiza eventos privados.</span></div>
+    </div>
+
+    <div class="c s8">
+      <h2>Septiembre, pieza por pieza</h2>
+      <p class="h2sub">El calendario que planeamos: 24 contenidos en 30 días</p>
+      <div class="cal-wrap">
+        <div class="cal">
+          <span class="dow">Lun</span>
+          <span class="dow">Mar</span>
+          <span class="dow">Mié</span>
+          <span class="dow">Jue</span>
+          <span class="dow">Vie</span>
+          <span class="dow">Sáb</span>
+          <span class="dow">Dom</span>
+          <div class="dia vacio"></div>
+          <div class="dia pub"><span class="n">1</span><span class="pz reel" data-t="1 de septiembre" data-v="Reel" data-u="Publicado"><i></i><span>Reel</span><b class="ok">✓</b></span></div>
+          <div class="dia"><span class="n">2</span></div>
+          <div class="dia pub"><span class="n">3</span><span class="pz feed" data-t="3 de septiembre" data-v="Carrusel" data-u="Publicado"><i></i><span>Carrusel</span><b class="ok">✓</b></span></div>
+          <div class="dia pub"><span class="n">4</span><span class="pz hist" data-t="4 de septiembre" data-v="Historia" data-u="Publicada"><i></i><span>Historia</span><b class="ok">✓</b></span></div>
+          <div class="dia pub"><span class="n">5</span><span class="pz feed" data-t="5 de septiembre" data-v="Carrusel" data-u="Publicado como post"><i></i><span>Carrusel</span><b class="ok">✓</b></span></div>
+          <div class="dia"><span class="n">6</span></div>
+          <div class="dia pub"><span class="n">7</span><span class="pz reel" data-t="7 de septiembre" data-v="Reel" data-u="Publicado como carrusel"><i></i><span>Reel</span><b class="ok">✓</b></span></div>
+          <div class="dia pub"><span class="n">8</span><span class="pz reel" data-t="8 de septiembre" data-v="Reel" data-u="Publicado como carrusel"><i></i><span>Reel</span><b class="ok">✓</b></span></div>
+          <div class="dia lista"><span class="n">9</span><span class="pz hist" data-t="9 de septiembre" data-v="Historia" data-u="Realizada, no se alcanzó a publicar"><i></i><span>Historia</span></span></div>
+          <div class="dia despues"><span class="n">10</span><span class="pz feed" data-t="10 de septiembre" data-v="Carrusel" data-u="Jabalí"><i></i><span>Carrusel</span></span><span class="pz hist" data-t="10 de septiembre" data-v="Historia" data-u="Brasa y oficio"><i></i><span>Historia</span></span></div>
+          <div class="dia despues"><span class="n">11</span></div>
+          <div class="dia despues"><span class="n">12</span><span class="pz feed" data-t="12 de septiembre" data-v="Carrusel" data-u="Banquete privado"><i></i><span>Carrusel</span></span><span class="pz hist" data-t="12 de septiembre" data-v="Historia" data-u="Banquete privado"><i></i><span>Historia</span></span></div>
+          <div class="dia despues"><span class="n">13</span></div>
+          <div class="dia despues"><span class="n">14</span></div>
+          <div class="dia despues"><span class="n">15<em>Grito</em></span><span class="pz reel" data-t="15 de septiembre" data-v="Reel" data-u="Marca"><i></i><span>Reel</span></span><span class="pz hist" data-t="15 de septiembre" data-v="Historia" data-u="Brasa y oficio"><i></i><span>Historia</span></span></div>
+          <div class="dia despues"><span class="n">16<em>Fiesta</em></span></div>
+          <div class="dia despues"><span class="n">17</span><span class="pz feed" data-t="17 de septiembre" data-v="Carrusel" data-u="Frente público"><i></i><span>Carrusel</span></span></div>
+          <div class="dia despues"><span class="n">18</span><span class="pz hist" data-t="18 de septiembre" data-v="Historia" data-u="Banquete privado"><i></i><span>Historia</span></span></div>
+          <div class="dia despues"><span class="n">19</span><span class="pz feed" data-t="19 de septiembre" data-v="Carrusel" data-u="Brasa y oficio"><i></i><span>Carrusel</span></span></div>
+          <div class="dia despues"><span class="n">20</span></div>
+          <div class="dia despues"><span class="n">21</span><span class="pz reel" data-t="21 de septiembre" data-v="Reel" data-u="Banquete privado"><i></i><span>Reel</span></span></div>
+          <div class="dia despues"><span class="n">22</span></div>
+          <div class="dia despues"><span class="n">23</span><span class="pz feed" data-t="23 de septiembre" data-v="Carrusel" data-u="Jabalí"><i></i><span>Carrusel</span></span></div>
+          <div class="dia despues"><span class="n">24</span></div>
+          <div class="dia despues"><span class="n">25</span><span class="pz reel" data-t="25 de septiembre" data-v="Reel" data-u="Marca"><i></i><span>Reel</span></span><span class="pz hist" data-t="25 de septiembre" data-v="Historia" data-u="Banquete privado"><i></i><span>Historia</span></span></div>
+          <div class="dia despues"><span class="n">26</span></div>
+          <div class="dia despues"><span class="n">27</span><span class="pz reel" data-t="27 de septiembre" data-v="Reel" data-u="Brasa y oficio"><i></i><span>Reel</span></span></div>
+          <div class="dia despues"><span class="n">28</span></div>
+          <div class="dia despues"><span class="n">29</span><span class="pz feed" data-t="29 de septiembre" data-v="Carrusel" data-u="Banquete privado"><i></i><span>Carrusel</span></span></div>
+          <div class="dia despues"><span class="n">30</span><span class="pz feed" data-t="30 de septiembre" data-v="Post" data-u="Frente público"><i></i><span>Post</span></span><span class="pz hist" data-t="30 de septiembre" data-v="Historia" data-u="Frente público"><i></i><span>Historia</span></span></div>
+          <div class="dia vacio"></div>
+          <div class="dia vacio"></div>
+          <div class="dia vacio"></div>
+          <div class="dia vacio"></div>
+        </div>
+      </div>
+      <div class="leg">
+        <span><i class="sw rd"></i>Reel</span>
+        <span><i class="sw sq"></i>Carrusel o post</span>
+        <span><i class="sw hs"></i>Historia</span>
+        <span><i class="sw pubk"></i>Publicado</span>
+        <span><i class="sw lista"></i>Realizada, sin publicar</span>
+        <span><i class="sw desp"></i>Del 10 en adelante</span>
+      </div>
+    </div>
+    <div class="c flat s4">
+      <h2>Cómo se repartía</h2>
+      <p class="h2sub">Los 24 contenidos del plan</p>
+      <div class="mezcla">
+        <div><p class="big sm">7</p><p class="foot">reels</p></div>
+        <div><p class="big sm">9</p><p class="foot">carruseles y posts</p></div>
+        <div><p class="big sm">8</p><p class="foot">historias</p></div>
+      </div>
+      <p class="lab" style="margin-top:24px">Las 16 piezas de feed, por pilar</p>
+      <div class="hb">
+        <div class="hbr"><span class="nm">Banquete privado</span><span class="vl">5</span><span class="tr"><span class="fl" style="width:100%"></span></span></div>
+        <div class="hbr"><span class="nm">Marca y reglas del juego</span><span class="vl">4</span><span class="tr"><span class="fl" style="width:80%"></span></span></div>
+        <div class="hbr"><span class="nm">Jabalí</span><span class="vl">3</span><span class="tr"><span class="fl" style="width:60%"></span></span></div>
+        <div class="hbr"><span class="nm">Brasa y oficio</span><span class="vl">2</span><span class="tr"><span class="fl" style="width:40%"></span></span></div>
+        <div class="hbr"><span class="nm">Frente público</span><span class="vl">2</span><span class="tr"><span class="fl" style="width:40%"></span></span></div>
+      </div>
+      <p class="nota">Septiembre no tenía festivales y es el mes en que se cotizan las fiestas de fin de año, así que el banquete privado llevó la mayor parte.</p>
+    </div>
+  </div>
+
+  <h2 class="sect">El reporte de resultados</h2>
+  <div class="bento">
+    <div class="c dark s5">
+      <p class="lab">Lo que construimos</p>
+      <p class="tesis-s">Un reporte web que mide los diez indicadores del contrato, con gráficos que muestran el dato al pasar el cursor y cada publicación enlazada a su original.</p>
+      <ul class="pts">
+        <li>Los diez puntos del contrato, de la a a la j, cada uno marcado con su letra.</li>
+        <li>Alcance día por día, alcance por publicación, retención de reels y de dónde llegan las vistas en TikTok.</li>
+        <li>Las publicaciones con mejor y menor desempeño, con lo que corregimos en cada caso.</li>
+      </ul>
+      <a class="cta-t" href="#agosto">Ver el reporte de agosto →</a>
+    </div>
+    <div class="c s7">
+      <h2>Lo que midió agosto</h2>
+      <p class="h2sub">Primer mes completo en Instagram y TikTok</p>
+      <div class="agosto6">
+        <div><p class="big sm">4,124</p><p class="foot">personas alcanzadas</p></div>
+        <div><p class="big sm">5,968</p><p class="foot">impresiones</p></div>
+        <div><p class="big sm">5,420</p><p class="foot">reproducciones de video</p></div>
+        <div><p class="big sm">+20</p><p class="foot">seguidores ganados</p></div>
+        <div><p class="big sm">16.3%</p><p class="foot">tasa de interacción en Instagram</p></div>
+        <div><p class="big sm">91.9%</p><p class="foot">de las vistas de TikTok llegaron por Para ti</p></div>
+      </div>
+      <ul class="pts" style="margin-top:22px">
+        <li><b>Lo que se graba en evento real es lo que atrae.</b> Las piezas más vistas salieron de Tula Beer Fest o del producto ya servido.</li>
+        <li><b>TikTok es la red que abre la puerta.</b> Nueve de cada diez reproducciones llegaron de gente que no nos seguía.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sect">Las cinco publicaciones de septiembre</h2>
+  <div class="cinco">
+    <a class="pc" href="https://www.instagram.com/reel/Dcw9P5qgRny/" target="_blank" rel="noopener">
+      <div class="ph"><div class="tags"><span class="tag win">🏆 Mayor alcance</span><span class="tag">Reel</span></div>
+        <img loading="lazy" src="../img/portadas/2026-09/ig02.jpg" alt="Portada del reel de Fiestas Patrias con la bandera, del 1 de septiembre"></div>
+      <div class="bd">
+        <div class="dt2">1 de septiembre</div>
+        <p class="tx">🔥 ¡Septiembre trae el Grito con Colmillo! Llegamos con la parrilla al lugar de tu evento y prendemos el carbón ahí. Tú recibes a los invitados; de lo demás nos encargamos.</p>
+        <div class="plats">
+          <div class="plat"><span>Instagram</span><div class="st"><div><b>112</b><span>Alcance</span></div><div><b>204</b><span>Vistas</span></div></div></div>
+          <div class="plat"><span>TikTok</span><div class="st"><div><b>568</b><span>Vistas</span></div><div><b>30</b><span>Me gusta</span></div></div></div>
+        </div>
+        <div class="go">Ver publicación →</div>
+      </div>
+    </a>
+    <a class="pc" href="https://www.instagram.com/p/Dc2JhOEgDO9/" target="_blank" rel="noopener">
+      <div class="ph"><div class="tags"><span class="tag">Carrusel</span></div>
+        <img loading="lazy" src="../img/portadas/2026-09/ig04.jpg" alt="Portada del carrusel ¿Desde tu cocina?, del 3 de septiembre"></div>
+      <div class="bd">
+        <div class="dt2">3 de septiembre</div>
+        <p class="tx">🔥 El 15 todos van a estar en la misma mesa. En tu jardín, en tu patio o en el salón que hayas rentado, con el costillar de jabalí saliendo de la parrilla.</p>
+        <div class="plats">
+          <div class="plat"><span>Instagram</span><div class="st"><div><b>8</b><span>Alcance</span></div><div><b>18</b><span>Vistas</span></div></div></div>
+          <div class="plat"><span>TikTok</span><div class="st"><div><b>124</b><span>Vistas</span></div><div><b>2</b><span>Me gusta</span></div></div></div>
+        </div>
+        <div class="go">Ver publicación →</div>
+      </div>
+    </a>
+    <a class="pc" href="https://www.instagram.com/p/Dc7ArCZqV3q/" target="_blank" rel="noopener">
+      <div class="ph"><div class="tags"><span class="tag">Post</span></div>
+        <img loading="lazy" src="../img/portadas/2026-09/ig05.jpg" alt="Portada del post Este 15 de septiembre, del 5 de septiembre"></div>
+      <div class="bd">
+        <div class="dt2">5 de septiembre</div>
+        <p class="tx">🔥 Prendemos el carbón en el lugar de tu fiesta. El costillar se deshebra ahí mismo y las tortillas de maíz salen del comal a la mesa.</p>
+        <div class="plats">
+          <div class="plat"><span>Instagram</span><div class="st"><div><b>7</b><span>Alcance</span></div><div><b>20</b><span>Vistas</span></div></div></div>
+          <div class="plat"><span>TikTok</span><p class="solo">Solo en Instagram</p></div>
+        </div>
+        <div class="go">Ver publicación →</div>
+      </div>
+    </a>
+    <a class="pc" href="https://www.instagram.com/p/Dc_0IDlmo46/" target="_blank" rel="noopener">
+      <div class="ph"><div class="tags"><span class="tag win">🏆 Más visto en TikTok</span><span class="tag">Carrusel</span></div>
+        <img loading="lazy" src="../img/portadas/2026-09/ig07.jpg" alt="Portada del carrusel En México somos los mejores celebrando, del 7 de septiembre"></div>
+      <div class="bd">
+        <div class="dt2">7 de septiembre</div>
+        <p class="tx">🔥 Cualquier pretexto es bueno. Boda, bautizo, XV, posada o la carne asada del domingo: llevamos la parrilla y cocinamos enfrente de tus invitados.</p>
+        <div class="plats">
+          <div class="plat"><span>Instagram</span><div class="st"><div><b>7</b><span>Alcance</span></div><div><b>26</b><span>Vistas</span></div></div></div>
+          <div class="plat"><span>TikTok</span><div class="st"><div><b>579</b><span>Vistas</span></div><div><b>8</b><span>Me gusta</span></div></div></div>
+        </div>
+        <div class="go">Ver publicación →</div>
+      </div>
+    </a>
+    <a class="pc" href="https://www.instagram.com/p/DdDAq9nADyj/" target="_blank" rel="noopener">
+      <div class="ph"><div class="tags"><span class="tag">Carrusel</span></div>
+        <img loading="lazy" src="../img/portadas/2026-09/ig09.jpg" alt="Portada del carrusel ¿Ya sabes qué van a cenar el 15?, del 8 de septiembre"></div>
+      <div class="bd">
+        <div class="dt2">8 de septiembre</div>
+        <p class="tx">🐗 Se pueden tener las dos cosas. El 15 llegamos con la parrilla, cocinamos enfrente de tus invitados y tú nada más te sientas con la familia.</p>
+        <div class="plats">
+          <div class="plat"><span>Instagram</span><div class="st"><div><b>6</b><span>Alcance</span></div><div><b>11</b><span>Vistas</span></div></div></div>
+          <div class="plat"><span>TikTok</span><div class="st"><div><b>103</b><span>Vistas</span></div><div><b>1</b><span>Me gusta</span></div></div></div>
+        </div>
+        <div class="go">Ver publicación →</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="bento" style="margin-top:14px">
+    <div class="c s7">
+      <h2>Vistas por publicación</h2>
+      <p class="h2sub">Instagram y TikTok, del 1 al 9 de septiembre</p>
+      <div class="sb">
+        <div class="sbr"><span class="nm">1 sep · Reel</span><span class="vl">772</span><span class="tr"><span class="seg ig" style="width:26.42%" data-t="Reel del 1 de septiembre · Instagram" data-v="204" data-u="vistas"></span><span class="seg tk" style="width:73.58%" data-t="Reel del 1 de septiembre · TikTok" data-v="568" data-u="vistas"></span></span></div>
+        <div class="sbr"><span class="nm">3 sep · Carrusel</span><span class="vl">142</span><span class="tr"><span class="seg ig" style="width:2.33%" data-t="Carrusel del 3 de septiembre · Instagram" data-v="18" data-u="vistas"></span><span class="seg tk" style="width:16.06%" data-t="Carrusel del 3 de septiembre · TikTok" data-v="124" data-u="vistas"></span></span></div>
+        <div class="sbr"><span class="nm">5 sep · Post</span><span class="vl">20</span><span class="tr"><span class="seg ig" style="width:2.59%" data-t="Post del 5 de septiembre · Instagram" data-v="20" data-u="vistas"></span></span></div>
+        <div class="sbr"><span class="nm">7 sep · Carrusel</span><span class="vl">605</span><span class="tr"><span class="seg ig" style="width:3.37%" data-t="Carrusel del 7 de septiembre · Instagram" data-v="26" data-u="vistas"></span><span class="seg tk" style="width:75.00%" data-t="Carrusel del 7 de septiembre · TikTok" data-v="579" data-u="vistas"></span></span></div>
+        <div class="sbr"><span class="nm">8 sep · Carrusel</span><span class="vl">114</span><span class="tr"><span class="seg ig" style="width:1.42%" data-t="Carrusel del 8 de septiembre · Instagram" data-v="11" data-u="vistas"></span><span class="seg tk" style="width:13.34%" data-t="Carrusel del 8 de septiembre · TikTok" data-v="103" data-u="vistas"></span></span></div>
+      </div>
+      <div class="leg">
+        <span><i class="sw ig"></i>Instagram · 279 vistas</span>
+        <span><i class="sw tk"></i>TikTok · 1,374 vistas</span>
+      </div>
+    </div>
+    <div class="c flat s5">
+      <h2>Qué nos dijo septiembre</h2>
+      <p class="h2sub">Lectura de las cinco piezas</p>
+      <div class="rows">
+        <div class="row"><span class="nm">Publicaciones</span><b>5</b></div>
+        <div class="row"><span class="nm">Historias publicadas</span><b>1</b></div>
+        <div class="row"><span class="nm">Vistas en las dos redes</span><b>1,653</b></div>
+        <div class="row"><span class="nm">Interacciones</span><b>58</b></div>
+      </div>
+      <ul class="pts" style="margin-top:18px">
+        <li><b>El video sigue abriendo la puerta.</b> El reel del 1 de septiembre sumó 772 vistas y alcanzó a 112 personas en Instagram, más que las otras cuatro piezas juntas.</li>
+        <li><b>En TikTok, el carrusel también atrae.</b> El del 7 llegó a 579 vistas; en Instagram, a 26. Es el mismo patrón que vimos en agosto con la barra de dulces.</li>
+        <li><b>TikTok cargó el mes.</b> Ocho de cada diez vistas de septiembre llegaron por ahí.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bento" style="margin-top:14px">
+    <div class="c marfil s12">
+      <div class="hist9">
+        <div>
+          <p class="lab">Historias de septiembre</p>
+          <h2>La historia del 9, lista para subir</h2>
+          <p class="h2sub">Realizada, no se alcanzó a publicar</p>
+          <p class="hist9-p">Cuatro pantallas con lo que se sirve: el taquito de jabalí, el mixiote y el arrocito con leche, y cierra con el parrillero. Quedan listas para que la publiquen cuando quieran.</p>
+          <p class="hist9-p">La historia del 4 de septiembre sí se publicó.</p>
+        </div>
+        <div class="hist9-img">
+          <figure><img loading="lazy" src="../img/historias/2026-09/taquito.jpg" alt="Pantalla de la historia del 9 de septiembre: el taquito de jabalí"></figure>
+          <figure><img loading="lazy" src="../img/historias/2026-09/mixiote.jpg" alt="Pantalla de la historia del 9 de septiembre: el mixiote"></figure>
+          <figure><img loading="lazy" src="../img/historias/2026-09/arrocito.jpg" alt="Pantalla de la historia del 9 de septiembre: el arrocito con leche"></figure>
+          <figure><img loading="lazy" src="../img/historias/2026-09/parrillero.jpg" alt="Pantalla de la historia del 9 de septiembre: el parrillero"></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sect">Lo que queda con ustedes</h2>
+  <div class="bento">
+    <div class="c marfil s7">
+      <p class="lab">Todo queda documentado</p>
+      <div class="rows">
+        <div class="row entrega"><span><b>La estrategia</b>Objetivos, pilares de contenido y públicos, en el tablero del proyecto.</span></div>
+        <div class="row entrega"><span><b>El plan de septiembre</b>Los 24 contenidos con fecha, formato y pilar. Lo que va del 10 en adelante sirve de guía para continuar.</span></div>
+        <div class="row entrega"><span><b>Este reporte</b>Agosto completo con los diez indicadores del contrato y este cierre, en una misma liga.</span></div>
+        <div class="row entrega"><span><b>Las cuentas</b>Instagram y TikTok activas, con 25 publicaciones que siguen trabajando.</span></div>
+      </div>
+    </div>
+    <div class="c mint s5">
+      <p class="lab">Si continúan por su cuenta</p>
+      <ul class="pts">
+        <li><b>Sostengan el video.</b> En los dos meses, los reels y TikTok trajeron a la mayor parte de la gente nueva.</li>
+        <li><b>Graben en cada evento.</b> Lo que mejor funciona sale de un evento real o del producto ya servido.</li>
+        <li><b>Aprovechen la temporada.</b> De septiembre a noviembre se cotizan posadas, cenas de empresa y bodas de fin de año.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bento" style="margin-top:14px">
+    <div class="c dark s12">
+      <div class="planlink">
+        <div>
+          <p class="lab">Gracias por la confianza</p>
+          <p style="margin:0;max-width:56ch;font-size:14.5px;color:rgba(255,255,227,.85)">
+            Fue un gusto llevar el fuego de Colmillo de Jabalí a sus redes. En el tablero están la estrategia y el plan completo de septiembre.
+          </p>
+        </div>
+        <a class="cta" href="https://app.notion.com/p/freepi-marketing/Colmillo-de-Jabal-7360443fa7e78334b25001bae845b1f7?source=copy_link" target="_blank" rel="noopener">Abrir el tablero del proyecto →</a>
+      </div>
+    </div>
+  </div>
+  </section>
+
   <footer>
-    <div>Colmillo de Jabalí · Reporte de agosto de 2026</div>
+    <div>Colmillo de Jabalí · Agosto y septiembre de 2026</div>
     <div class="sl">El fuego, la tradición y el detalle.</div>
     <div class="byline"><img src="../img/logo-freepi.png" alt="Freepi"></div>
   </footer>
@@ -681,6 +1104,54 @@ footer .sl{font-family:"Noto Serif",Georgia,serif;font-style:italic;color:var(--
   });
   window.addEventListener('scroll', ocultar, {passive:true});
   window.addEventListener('blur', ocultar);
+})();
+
+(function(){
+  var tabs = [].slice.call(document.querySelectorAll('[role="tab"]'));
+  if (!tabs.length) return;
+  var barra = document.querySelector('.tabs');
+
+  function elegir(nombre, enfocar){
+    var hay = tabs.some(function(t){ return t.getAttribute('data-tab') === nombre; });
+    if (!hay) return false;
+    tabs.forEach(function(t){
+      var si = t.getAttribute('data-tab') === nombre;
+      t.setAttribute('aria-selected', si ? 'true' : 'false');
+      t.tabIndex = si ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !si;
+      if (si && enfocar) t.focus();
+    });
+    return true;
+  }
+  function marcar(nombre){
+    try { history.replaceState(null, '', '#' + nombre); } catch (e) {}
+  }
+  function desdeHash(){
+    if (!elegir(location.hash.slice(1))) elegir('agosto');
+  }
+
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){
+      elegir(t.getAttribute('data-tab'));
+      marcar(t.getAttribute('data-tab'));
+    });
+    t.addEventListener('keydown', function(e){
+      var paso = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!paso) return;
+      e.preventDefault();
+      var sig = tabs[(i + paso + tabs.length) % tabs.length].getAttribute('data-tab');
+      elegir(sig, true);
+      marcar(sig);
+    });
+  });
+
+  // un enlace a #agosto o #cierre cambia de pestaña y regresa a la cabecera
+  window.addEventListener('hashchange', function(){
+    desdeHash();
+    var quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (barra) barra.scrollIntoView({block: 'start', behavior: quieto ? 'auto' : 'smooth'});
+  });
+  desdeHash();
 })();
 </script>
 </body>
